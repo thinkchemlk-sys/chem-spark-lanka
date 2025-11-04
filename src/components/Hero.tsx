@@ -1,8 +1,11 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 import heroImage from "@/assets/hero-chemistry.jpg";
 
 const Hero = () => {
+  const navigate = useNavigate();
+  
   const scrollToServices = () => {
     const element = document.getElementById("services");
     if (element) {
@@ -40,11 +43,18 @@ const Hero = () => {
           <div className="flex flex-col sm:flex-row gap-4">
             <Button 
               size="lg"
-              onClick={scrollToServices}
+              onClick={() => navigate("/auth")}
               className="bg-accent text-accent-foreground hover:bg-accent/90 font-bold text-lg px-8 py-6 shadow-xl hover:shadow-2xl transition-all group"
             >
-              Explore Our Courses
+              Start Practice
               <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
+            </Button>
+            <Button 
+              size="lg"
+              onClick={scrollToServices}
+              className="bg-accent/80 text-accent-foreground hover:bg-accent/70 font-bold text-lg px-8 py-6 shadow-lg hover:shadow-xl transition-all"
+            >
+              Explore Our Courses
             </Button>
             <Button 
               size="lg"
