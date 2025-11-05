@@ -67,13 +67,16 @@ const About = () => {
             </h2>
             <div className="prose prose-lg max-w-none text-muted-foreground space-y-6">
               <p className="text-lg leading-relaxed">
-                ThinkChem was founded with a singular vision: to transform the way A-Level chemistry is taught and learned in Sri Lanka. We recognized that chemistry education needed a more engaging, comprehensive, and student-centered approach.
+                Behind ThinkChem, is a passionate chemistry instructor dedicated to help students to truly understand the essence of chemistry, not just memorise it.
               </p>
               <p className="text-lg leading-relaxed">
-                Over the years, we've built a reputation for excellence, helping hundreds of students not just pass their A-Level examinations, but truly understand and appreciate the fascinating world of chemistry. Our innovative teaching methods combine traditional academic rigor with modern educational techniques.
+                Started teaching at 19, I've spent the past six years helping students turn chemistry challenges into confidence.
               </p>
               <p className="text-lg leading-relaxed">
-                Today, ThinkChem stands as a beacon of quality chemistry education, continuing to inspire and guide students toward academic success and a deeper appreciation for the molecular world around us.
+                The teaching approach focuses on clear understanding, practical exam strategies, and a genuine love for the subject to bring out the best in every learner.
+              </p>
+              <p className="text-lg leading-relaxed">
+                ThinkChem was founded to make Advanced Level chemistry simple and meaningful, helping students see it not as a burden but as a fascinating subject that connects ideas and real-world concepts.
               </p>
             </div>
           </div>
