@@ -1,4 +1,5 @@
 import { Mail, Phone, MapPin } from "lucide-react";
+import thinkChemLogo from "@/assets/thinkchem-logo.jpg";
 
 const Footer = () => {
   return (
@@ -6,11 +7,13 @@ const Footer = () => {
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-3 gap-8 mb-8">
           <div>
-            <div className="flex items-center space-x-2 mb-4">
-              <div className="w-10 h-10 bg-accent rounded-lg flex items-center justify-center">
-                <span className="text-accent-foreground font-bold text-xl">C</span>
-              </div>
-              <span className="font-display font-bold text-xl">Chemistry Education</span>
+            <div className="flex items-center space-x-3 mb-4">
+              <img 
+                src={thinkChemLogo} 
+                alt="ThinkChem Logo" 
+                className="w-12 h-12 object-contain"
+              />
+              <span className="font-display font-bold text-xl">ThinkChem</span>
             </div>
             <p className="text-primary-foreground/80 leading-relaxed">
               Expert chemistry education for advanced level students in Sri Lanka, dedicated to your academic success.
@@ -59,7 +62,7 @@ const Footer = () => {
 
         <div className="border-t border-primary-foreground/20 pt-8 text-center">
           <p className="text-primary-foreground/60">
-            © {new Date().getFullYear()} Chemistry Education. All rights reserved.
+            © {new Date().getFullYear()} ThinkChem. All rights reserved.
           </p>
         </div>
       </div>
