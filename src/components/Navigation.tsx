@@ -1,10 +1,12 @@
 import { useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import thinkChemLogo from "@/assets/thinkchem-logo.png";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const location = useLocation();
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
@@ -18,37 +20,39 @@ const Navigation = () => {
     <nav className="fixed top-0 w-full bg-background/95 backdrop-blur-sm z-50 border-b border-border shadow-sm">
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
-          <div className="flex items-center space-x-3">
+          <Link to="/" className="flex items-center space-x-3">
             <img 
               src={thinkChemLogo} 
               alt="ThinkChem Logo" 
               className="w-12 h-12 object-contain"
             />
             <span className="font-display font-bold text-xl text-foreground">ThinkChem</span>
-          </div>
+          </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            <button 
-              onClick={() => scrollToSection("home")}
+            <Link 
+              to="/"
               className="text-foreground hover:text-primary transition-colors font-medium"
             >
               Home
-            </button>
-            <button 
-              onClick={() => scrollToSection("about")}
+            </Link>
+            <Link 
+              to="/about"
               className="text-foreground hover:text-primary transition-colors font-medium"
             >
               About Us
-            </button>
-            <button 
-              onClick={() => scrollToSection("services")}
-              className="text-foreground hover:text-primary transition-colors font-medium"
-            >
-              What We Do
-            </button>
+            </Link>
+            {location.pathname === "/" && (
+              <button 
+                onClick={() => scrollToSection("services")}
+                className="text-foreground hover:text-primary transition-colors font-medium"
+              >
+                What We Do
+              </button>
+            )}
             <Button 
-              onClick={() => scrollToSection("services")}
+              onClick={() => location.pathname === "/" ? scrollToSection("services") : window.location.href = "/#services"}
               className="bg-accent text-accent-foreground hover:bg-accent/90 font-semibold shadow-md hover:shadow-lg transition-all"
             >
               Get Started
@@ -68,26 +72,33 @@ const Navigation = () => {
         {/* Mobile Navigation */}
         {isOpen && (
           <div className="md:hidden mt-4 pb-4 space-y-4 animate-in slide-in-from-top">
-            <button 
-              onClick={() => scrollToSection("home")}
+            <Link 
+              to="/"
+              onClick={() => setIsOpen(false)}
               className="block w-full text-left py-2 text-foreground hover:text-primary transition-colors font-medium"
             >
               Home
-            </button>
-            <button 
-              onClick={() => scrollToSection("about")}
+            </Link>
+            <Link 
+              to="/about"
+              onClick={() => setIsOpen(false)}
               className="block w-full text-left py-2 text-foreground hover:text-primary transition-colors font-medium"
             >
               About Us
-            </button>
-            <button 
-              onClick={() => scrollToSection("services")}
-              className="block w-full text-left py-2 text-foreground hover:text-primary transition-colors font-medium"
-            >
-              What We Do
-            </button>
+            </Link>
+            {location.pathname === "/" && (
+              <button 
+                onClick={() => scrollToSection("services")}
+                className="block w-full text-left py-2 text-foreground hover:text-primary transition-colors font-medium"
+              >
+                What We Do
+              </button>
+            )}
             <Button 
-              onClick={() => scrollToSection("services")}
+              onClick={() => {
+                setIsOpen(false);
+                location.pathname === "/" ? scrollToSection("services") : window.location.href = "/#services";
+              }}
               className="w-full bg-accent text-accent-foreground hover:bg-accent/90 font-semibold"
             >
               Get Started
