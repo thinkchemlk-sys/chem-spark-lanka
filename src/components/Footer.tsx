@@ -1,5 +1,5 @@
 import { Mail, Phone, MapPin } from "lucide-react";
-import thinkChemLogo from "@/assets/thinkchem-logo.jpg";
+import thinkChemLogo from "@/assets/thinkchem-logo.png";
 
 const Footer = () => {
   return (

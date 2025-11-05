@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
-import thinkChemLogo from "@/assets/thinkchem-logo.jpg";
+import thinkChemLogo from "@/assets/thinkchem-logo.png";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
