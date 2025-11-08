@@ -3,10 +3,11 @@ import { Calendar } from "lucide-react";
 
 const ExamCountdown = () => {
   // Sri Lanka A-Level exams typically in August - setting to August 15, 2025
-  const examDate = new Date("2025-08-15T09:00:00+05:30");
+  const examDate = new Date("2025-08-15T09:00:00");
   
   const calculateTimeLeft = () => {
-    const difference = examDate.getTime() - new Date().getTime();
+    const now = new Date();
+    const difference = examDate.getTime() - now.getTime();
     
     if (difference > 0) {
       return {
