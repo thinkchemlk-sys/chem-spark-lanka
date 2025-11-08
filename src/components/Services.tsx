@@ -111,14 +111,6 @@ const Services = () => {
           })}
         </div>
 
-        <div className="text-center">
-          <Button 
-            size="lg"
-            className="bg-accent text-accent-foreground hover:bg-accent/90 font-bold text-lg px-10 py-6 shadow-lg hover:shadow-xl transition-all"
-          >
-            Enroll Now
-          </Button>
-        </div>
       </div>
     </section>
   );
