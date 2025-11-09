@@ -5,7 +5,8 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Calendar } from "@/components/ui/calendar";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
-import { Check, CalendarIcon } from "lucide-react";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Check, CalendarIcon, Clock } from "lucide-react";
 import { useState } from "react";
 import { format } from "date-fns";
 import { cn } from "@/lib/utils";
@@ -20,8 +21,15 @@ const enrollmentSchema = z.object({
   phone: z.string().trim().min(10, "Phone number is required").max(20),
   consent: z.boolean().refine(val => val === true, "You must consent to continue"),
   callDate: z.date().optional(),
+  callTime: z.string().optional(),
+  medium: z.enum(["English", "Sinhala"], { errorMap: () => ({ message: "Please select a medium" }) }),
   notes: z.string().trim().max(1000, "Notes must be less than 1000 characters").optional(),
 });
+
+const timeSlots = [
+  "5:00 PM", "5:30 PM", "6:00 PM", "6:30 PM", "7:00 PM", "7:30 PM",
+  "8:00 PM", "8:30 PM", "9:00 PM", "9:30 PM", "10:00 PM", "10:30 PM", "11:00 PM"
+];
 
 const Contact = () => {
   const { toast } = useToast();
@@ -32,6 +40,8 @@ const Contact = () => {
     email: "",
     phone: "+94 ",
     consent: false,
+    medium: "",
+    callTime: "",
     notes: "",
   });
   const [callDate, setCallDate] = useState<Date>();
@@ -61,7 +71,9 @@ const Contact = () => {
           lastName: validatedData.lastName,
           email: validatedData.email,
           phone: validatedData.phone,
+          medium: validatedData.medium,
           callDate: callDate ? format(callDate, "PPP") : undefined,
+          callTime: validatedData.callTime,
           notes: validatedData.notes,
         },
       });
@@ -80,6 +92,8 @@ const Contact = () => {
         email: "",
         phone: "+94 ",
         consent: false,
+        medium: "",
+        callTime: "",
         notes: "",
       });
       setCallDate(undefined);
@@ -205,33 +219,67 @@ const Contact = () => {
                 </div>
 
                 <div className="space-y-2">
-                  <Label htmlFor="callDate" className="text-foreground">
-                    Preferred Date for Call (Optional)
+                  <Label htmlFor="medium" className="text-foreground">
+                    Medium <span className="text-destructive">*</span>
                   </Label>
-                  <Popover>
-                    <PopoverTrigger asChild>
-                      <Button
-                        variant="outline"
-                        className={cn(
-                          "w-full justify-start text-left font-normal bg-background border-input",
-                          !callDate && "text-muted-foreground"
-                        )}
-                      >
-                        <CalendarIcon className="mr-2 h-4 w-4" />
-                        {callDate ? format(callDate, "PPP") : <span>Pick a date</span>}
-                      </Button>
-                    </PopoverTrigger>
-                    <PopoverContent className="w-auto p-0" align="start">
-                      <Calendar
-                        mode="single"
-                        selected={callDate}
-                        onSelect={setCallDate}
-                        disabled={(date) => date < new Date()}
-                        initialFocus
-                        className="pointer-events-auto"
-                      />
-                    </PopoverContent>
-                  </Popover>
+                  <Select value={formData.medium} onValueChange={(value) => setFormData({...formData, medium: value})}>
+                    <SelectTrigger className="bg-background border-input">
+                      <SelectValue placeholder="Select medium" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="English">English</SelectItem>
+                      <SelectItem value="Sinhala">Sinhala</SelectItem>
+                    </SelectContent>
+                  </Select>
+                  {errors.medium && <p className="text-sm text-destructive">{errors.medium}</p>}
+                </div>
+
+                <div className="grid md:grid-cols-2 gap-4">
+                  <div className="space-y-2">
+                    <Label htmlFor="callDate" className="text-foreground">
+                      Preferred Date for Call (Optional)
+                    </Label>
+                    <Popover>
+                      <PopoverTrigger asChild>
+                        <Button
+                          variant="outline"
+                          className={cn(
+                            "w-full justify-start text-left font-normal bg-background border-input",
+                            !callDate && "text-muted-foreground"
+                          )}
+                        >
+                          <CalendarIcon className="mr-2 h-4 w-4" />
+                          {callDate ? format(callDate, "PPP") : <span>Pick a date</span>}
+                        </Button>
+                      </PopoverTrigger>
+                      <PopoverContent className="w-auto p-0" align="start">
+                        <Calendar
+                          mode="single"
+                          selected={callDate}
+                          onSelect={setCallDate}
+                          disabled={(date) => date < new Date()}
+                          initialFocus
+                          className="pointer-events-auto"
+                        />
+                      </PopoverContent>
+                    </Popover>
+                  </div>
+
+                  <div className="space-y-2">
+                    <Label htmlFor="callTime" className="text-foreground">
+                      Preferred Time (Sri Lankan Time - Optional)
+                    </Label>
+                    <Select value={formData.callTime} onValueChange={(value) => setFormData({...formData, callTime: value})}>
+                      <SelectTrigger className="bg-background border-input">
+                        <SelectValue placeholder="Select time slot" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        {timeSlots.map((time) => (
+                          <SelectItem key={time} value={time}>{time}</SelectItem>
+                        ))}
+                      </SelectContent>
+                    </Select>
+                  </div>
                 </div>
 
                 <div className="space-y-2">
