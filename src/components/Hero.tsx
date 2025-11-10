@@ -75,7 +75,7 @@ const Hero = () => {
               <img 
                 src={tutorImage} 
                 alt="Expert Chemistry Tutor" 
-                className="relative w-full max-w-md h-auto object-contain drop-shadow-2xl animate-fade-in opacity-90 scale-x-[-1]"
+                className="relative w-full max-w-md h-auto object-contain drop-shadow-2xl animate-fade-in opacity-[0.21] scale-x-[-1]"
               />
             </div>
           </div>
