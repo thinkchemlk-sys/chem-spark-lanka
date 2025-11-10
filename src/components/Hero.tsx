@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import heroImage from "@/assets/hero-chemistry.jpg";
-import tutorImage from "@/assets/tutor.jpg";
+import tutorImage from "@/assets/tutor.png";
 
 const Hero = () => {
   const navigate = useNavigate();
@@ -75,7 +75,7 @@ const Hero = () => {
               <img 
                 src={tutorImage} 
                 alt="Expert Chemistry Tutor" 
-                className="relative w-full max-w-md h-auto object-contain drop-shadow-2xl animate-fade-in"
+                className="relative w-full max-w-md h-auto object-contain drop-shadow-2xl animate-fade-in opacity-90 scale-x-[-1]"
               />
             </div>
           </div>
