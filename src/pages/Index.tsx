@@ -9,6 +9,7 @@ import FAQ from "@/components/FAQ";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import WhatsAppWidget from "@/components/WhatsAppWidget";
+import MascotWidget from "@/components/MascotWidget";
 
 const Index = () => {
   return (
@@ -24,6 +25,7 @@ const Index = () => {
       <Contact />
       <Footer />
       <WhatsAppWidget />
+      <MascotWidget />
     </div>
   );
 };

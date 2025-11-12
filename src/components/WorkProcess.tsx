@@ -1,6 +1,5 @@
 import { BookOpen, FileText, FlaskConical, Calendar, Target, Award } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
-import mascot from "@/assets/mascot-thinchem.png";
 
 const WorkProcess = () => {
   const steps = [
@@ -52,18 +51,11 @@ const WorkProcess = () => {
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-3xl mx-auto text-center mb-16">
-          <div className="flex justify-center mb-6">
-            <img 
-              src={mascot} 
-              alt="ThinkChem Learning Guide" 
-              className="w-40 h-40 md:w-48 md:h-48 object-contain animate-bounce hover:scale-110 transition-transform"
-            />
-          </div>
           <h2 className="font-display font-bold text-4xl md:text-5xl text-foreground mb-4">
             Our Proven Work Process
           </h2>
           <p className="text-lg text-muted-foreground">
-            Follow our friendly guide through a systematic approach designed to transform chemistry students into A-Level champions
+            A systematic approach designed to transform chemistry students into A-Level champions
           </p>
         </div>
 
