@@ -84,10 +84,38 @@ export default {
             height: "0",
           },
         },
+        wave: {
+          "0%, 100%": { transform: "rotate(0deg)" },
+          "25%": { transform: "rotate(-15deg)" },
+          "75%": { transform: "rotate(15deg)" },
+        },
+        turnLeft: {
+          "0%, 100%": { transform: "rotateY(0deg)" },
+          "50%": { transform: "rotateY(-180deg)" },
+        },
+        turnRight: {
+          "0%, 100%": { transform: "rotateY(0deg)" },
+          "50%": { transform: "rotateY(180deg)" },
+        },
+        jump: {
+          "0%, 100%": { transform: "translateY(0)" },
+          "50%": { transform: "translateY(-30px)" },
+        },
+        dance: {
+          "0%, 100%": { transform: "rotate(0deg) scale(1)" },
+          "25%": { transform: "rotate(-10deg) scale(1.1)" },
+          "50%": { transform: "rotate(10deg) scale(0.9)" },
+          "75%": { transform: "rotate(-10deg) scale(1.1)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        wave: "wave 0.5s ease-in-out",
+        turnLeft: "turnLeft 0.5s ease-in-out",
+        turnRight: "turnRight 0.5s ease-in-out",
+        jump: "jump 0.5s ease-in-out",
+        dance: "dance 1s ease-in-out",
       },
     },
   },
