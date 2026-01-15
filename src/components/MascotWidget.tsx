@@ -1,10 +1,11 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import { 
   X, Sparkles, BookOpen, Trophy, Zap, Hand, RotateCcw, RotateCw, Play,
-  Award, Beaker, CheckCircle, Users, HelpCircle, MessageCircle, Mail
+  Award, Beaker, CheckCircle, Users, HelpCircle, MessageCircle, Mail, Gamepad2
 } from "lucide-react";
 import { Button } from "./ui/button";
 import mascot from "@/assets/mascot-clean.png";
+import ChemistryQuizGame from "./ChemistryQuizGame";
 
 type AnimationState = 'idle' | 'wave' | 'turnLeft' | 'turnRight' | 'dance' | 'jump';
 type Section = 'home' | 'about' | 'services' | 'testimonials' | 'faq' | 'contact';
@@ -13,7 +14,7 @@ const MascotWidget = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [currentSection, setCurrentSection] = useState<Section>('home');
   const [animation, setAnimation] = useState<AnimationState>('idle');
-  const audioRef = useRef<HTMLAudioElement | null>(null);
+  const [isQuizOpen, setIsQuizOpen] = useState(false);
 
   // Context-aware tips based on current section
   const contextTips: Record<Section, { icon: any; message: string }[]> = {
@@ -228,9 +229,23 @@ const MascotWidget = () => {
           </div>
 
           <Button
+            onClick={() => {
+              setIsQuizOpen(true);
+              setIsOpen(false);
+              playSound(659.25, 0.2);
+            }}
+            size="sm"
+            className="w-full bg-gradient-to-r from-primary to-accent hover:opacity-90 mb-2"
+          >
+            <Gamepad2 className="w-4 h-4 mr-2" />
+            Quiz Battle
+          </Button>
+
+          <Button
             onClick={getNextTip}
             size="sm"
-            className="w-full bg-primary hover:bg-primary/90"
+            variant="outline"
+            className="w-full"
           >
             <Sparkles className="w-4 h-4 mr-2" />
             More Tips
@@ -258,6 +273,12 @@ const MascotWidget = () => {
           </div>
         )}
       </button>
+
+      <ChemistryQuizGame 
+        isOpen={isQuizOpen} 
+        onClose={() => setIsQuizOpen(false)} 
+        playSound={playSound}
+      />
     </div>
   );
 };
