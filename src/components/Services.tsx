@@ -1,9 +1,9 @@
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { BookOpen, Beaker, LineChart, Users, CheckCircle } from "lucide-react";
-import iconAtom from "@/assets/icon-atom-colorful.png";
-import iconTeaching from "@/assets/icon-teaching.png";
-import iconSuccess from "@/assets/icon-success.png";
+import iconAtom from "@/assets/icon-atom-3d.png";
+import iconTeaching from "@/assets/icon-teaching-3d.png";
+import iconSuccess from "@/assets/icon-success-3d.png";
 
 const Services = () => {
   const services = [
