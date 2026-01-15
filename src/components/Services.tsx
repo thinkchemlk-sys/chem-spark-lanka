@@ -68,11 +68,11 @@ const Services = () => {
               key={index}
               className="p-8 hover:shadow-xl transition-all duration-300 border-border bg-card"
             >
-              <div className="w-20 h-20 mb-6 mx-auto">
+              <div className="w-28 h-28 mb-6 mx-auto p-2 bg-primary/10 rounded-2xl shadow-lg">
                 <img 
                   src={service.image} 
                   alt={service.title}
-                  className="w-full h-full object-contain"
+                  className="w-full h-full object-contain drop-shadow-md"
                 />
               </div>
               <h3 className="font-display font-bold text-xl text-foreground mb-4 text-center">
