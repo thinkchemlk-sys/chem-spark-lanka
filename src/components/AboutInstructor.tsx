@@ -31,15 +31,15 @@ const AboutInstructor = () => {
   }, []);
 
   const achievements = [
-    { icon: GraduationCap, label: "BSc Chemistry", desc: "University of Colombo" },
-    { icon: Award, label: "10+ Years", desc: "Teaching Experience" },
+    { icon: GraduationCap, label: "MBBS", desc: "University of Moratuwa" },
+    { icon: Award, label: "6+ Years", desc: "Teaching Experience" },
     { icon: Users, label: "1000+", desc: "Students Taught" },
   ];
 
   const highlights = [
-    "Specialized in A-Level Chemistry curriculum",
-    "Expert in organic and inorganic chemistry",
-    "Proven track record of A/B grade results",
+    "ENFJ leader - passionate about empowering others",
+    "Active in Rotaract and Leo Club organizations",
+    "Transforming the impossible into reality",
   ];
 
   return (
@@ -97,16 +97,16 @@ const AboutInstructor = () => {
             {/* Main image container */}
             <div className="relative group">
               <div className="absolute inset-0 bg-gradient-to-tr from-primary to-accent rounded-2xl transform rotate-3 group-hover:rotate-6 transition-transform duration-500" />
-              <div className="relative bg-background rounded-2xl overflow-hidden shadow-lg transform group-hover:-translate-y-2 transition-all duration-500">
+              <div className="relative bg-background rounded-2xl overflow-hidden shadow-lg transform group-hover:-translate-y-2 transition-all duration-500 max-w-xs mx-auto">
                 <img
                   src={instructorImage}
-                  alt="Chemistry Instructor"
-                  className="w-full h-auto object-cover aspect-[4/5]"
+                  alt="Sithira Harischandra - Chemistry Instructor"
+                  className="w-full h-auto object-cover aspect-[3/4]"
                 />
                 {/* Overlay with name */}
-                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-primary/90 to-transparent p-6">
-                  <h3 className="text-2xl font-bold text-primary-foreground">Mr. Sithira</h3>
-                  <p className="text-primary-foreground/80">Chemistry Specialist</p>
+                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-primary/90 to-transparent p-4">
+                  <h3 className="text-xl font-bold text-primary-foreground">Sithira Harischandra</h3>
+                  <p className="text-primary-foreground/80 text-sm">MBBS Undergraduate | Chemistry Educator</p>
                 </div>
               </div>
             </div>
@@ -130,10 +130,10 @@ const AboutInstructor = () => {
                 Passionate About <span className="text-accent">Chemistry</span> Education
               </h3>
               <p className="text-muted-foreground leading-relaxed">
-                With over a decade of experience teaching A-Level Chemistry, I bring a unique approach 
-                that combines theoretical knowledge with practical applications. My mission is to make 
-                chemistry accessible and enjoyable for every student, ensuring they not only pass their 
-                exams but truly understand and appreciate the subject.
+                I am Sithira Harischandra, an undergraduate pursuing a Bachelor of Medicine, Bachelor of Surgery (MBBS) at the University of Moratuwa. Beyond my academic journey in medicine, I am deeply passionate about sharing knowledge, which has led me to 6+ years of experience in teaching. My long-term vision is to integrate education into my career, empowering others through learning.
+              </p>
+              <p className="text-muted-foreground leading-relaxed">
+                As an ENFJ, my extroverted nature fuels my drive to collaborate and lead, allowing me to contribute actively to organizations like Rotaract and the Leo Club at my alumnus. I am a firm believer in pushing boundaries, embracing challenges, and transforming the impossible into reality. With an optimistic outlook and unwavering determination, I continuously strive to surpass my limits and achieve my goals.
               </p>
             </div>
 
