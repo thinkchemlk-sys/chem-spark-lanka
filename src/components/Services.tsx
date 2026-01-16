@@ -1,14 +1,14 @@
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { BookOpen, Beaker, LineChart, Users, CheckCircle } from "lucide-react";
-import iconAtom from "@/assets/icon-atom-3d.png";
+import iconChemistryBook from "@/assets/icon-chemistry-book.svg";
 import iconTeaching from "@/assets/icon-teaching-3d.png";
 import iconSuccess from "@/assets/icon-success-3d.png";
 
 const Services = () => {
   const services = [
     {
-      image: iconAtom,
+      image: iconChemistryBook,
       title: "Comprehensive Curriculum",
       description: "Complete A-Level chemistry syllabus coverage with detailed explanations of all topics, from basic concepts to advanced theories.",
       features: [
