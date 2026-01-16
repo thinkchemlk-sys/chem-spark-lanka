@@ -4,7 +4,7 @@ import { Button } from "./ui/button";
 
 const WhatsAppWidget = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const phoneNumber = "94XXXXXXXXX"; // Replace with actual WhatsApp number
+  const phoneNumber = "94758479501";
   const message = "Hi! I'm interested in learning more about your chemistry classes.";
 
   const handleWhatsAppClick = () => {
