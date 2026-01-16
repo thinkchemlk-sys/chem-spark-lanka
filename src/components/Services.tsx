@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { BookOpen, Beaker, LineChart, Users, CheckCircle } from "lucide-react";
 import iconChemistryBook from "@/assets/icon-chemistry-book.svg";
 import iconScientist from "@/assets/icon-scientist.svg";
-import iconSuccess from "@/assets/icon-success-3d.png";
+import iconPolymer from "@/assets/icon-polymer.svg";
 
 const Services = () => {
   const services = [
@@ -30,7 +30,7 @@ const Services = () => {
       ]
     },
     {
-      image: iconSuccess,
+      image: iconPolymer,
       title: "Exam-Focused Preparation",
       description: "Strategic exam preparation with emphasis on past papers, marking schemes, and examination techniques for A-Level success.",
       features: [
