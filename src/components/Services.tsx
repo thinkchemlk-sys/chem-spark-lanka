@@ -2,7 +2,7 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { BookOpen, Beaker, LineChart, Users, CheckCircle } from "lucide-react";
 import iconChemistryBook from "@/assets/icon-chemistry-book.svg";
-import iconTeaching from "@/assets/icon-teaching-3d.png";
+import iconScientist from "@/assets/icon-scientist.svg";
 import iconSuccess from "@/assets/icon-success-3d.png";
 
 const Services = () => {
@@ -19,7 +19,7 @@ const Services = () => {
       ]
     },
     {
-      image: iconTeaching,
+      image: iconScientist,
       title: "Expert Teaching Methods",
       description: "Innovative teaching approaches that simplify complex concepts and make learning chemistry engaging and effective.",
       features: [
