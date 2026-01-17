@@ -43,26 +43,11 @@ const Hero = () => {
           <div className="flex flex-col sm:flex-row gap-4">
             <Button 
               size="lg"
-              onClick={() => navigate("/auth")}
+              onClick={scrollToServices}
               className="bg-accent text-accent-foreground hover:bg-accent/90 font-bold text-lg px-8 py-6 shadow-xl hover:shadow-2xl transition-all group"
             >
-              Start Practice
-              <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
-            </Button>
-            <Button 
-              size="lg"
-              onClick={scrollToServices}
-              className="bg-accent/80 text-accent-foreground hover:bg-accent/70 font-bold text-lg px-8 py-6 shadow-lg hover:shadow-xl transition-all"
-            >
               Explore Our Courses
-            </Button>
-            <Button 
-              size="lg"
-              variant="outline"
-              onClick={() => document.getElementById("about")?.scrollIntoView({ behavior: "smooth" })}
-              className="bg-white/10 backdrop-blur-sm text-white border-white/30 hover:bg-white/20 font-semibold text-lg px-8 py-6"
-            >
-              Learn More
+              <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
             </Button>
           </div>
         </div>
