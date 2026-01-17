@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { 
   X, Sparkles, BookOpen, Trophy, Zap, Hand, RotateCcw, RotateCw, Play,
   Award, Beaker, CheckCircle, Users, HelpCircle, MessageCircle, Mail, Gamepad2
@@ -15,6 +15,9 @@ const MascotWidget = () => {
   const [currentSection, setCurrentSection] = useState<Section>('home');
   const [animation, setAnimation] = useState<AnimationState>('idle');
   const [isQuizOpen, setIsQuizOpen] = useState(false);
+  const [position, setPosition] = useState({ x: 24, y: 96 }); // bottom-left default
+  const [isDragging, setIsDragging] = useState(false);
+  const dragRef = useRef<{ startX: number; startY: number; initialX: number; initialY: number } | null>(null);
 
   // Context-aware tips based on current section
   const contextTips: Record<Section, { icon: any; message: string }[]> = {
@@ -66,6 +69,73 @@ const MascotWidget = () => {
     handleScroll();
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  // Drag handlers
+  const handleMouseDown = (e: React.MouseEvent) => {
+    e.preventDefault();
+    setIsDragging(true);
+    dragRef.current = {
+      startX: e.clientX,
+      startY: e.clientY,
+      initialX: position.x,
+      initialY: position.y,
+    };
+  };
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    const touch = e.touches[0];
+    setIsDragging(true);
+    dragRef.current = {
+      startX: touch.clientX,
+      startY: touch.clientY,
+      initialX: position.x,
+      initialY: position.y,
+    };
+  };
+
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      if (!isDragging || !dragRef.current) return;
+      const deltaX = e.clientX - dragRef.current.startX;
+      const deltaY = dragRef.current.startY - e.clientY; // Inverted for bottom positioning
+      
+      const newX = Math.max(0, Math.min(window.innerWidth - 100, dragRef.current.initialX + deltaX));
+      const newY = Math.max(0, Math.min(window.innerHeight - 100, dragRef.current.initialY + deltaY));
+      
+      setPosition({ x: newX, y: newY });
+    };
+
+    const handleTouchMove = (e: TouchEvent) => {
+      if (!isDragging || !dragRef.current) return;
+      const touch = e.touches[0];
+      const deltaX = touch.clientX - dragRef.current.startX;
+      const deltaY = dragRef.current.startY - touch.clientY;
+      
+      const newX = Math.max(0, Math.min(window.innerWidth - 100, dragRef.current.initialX + deltaX));
+      const newY = Math.max(0, Math.min(window.innerHeight - 100, dragRef.current.initialY + deltaY));
+      
+      setPosition({ x: newX, y: newY });
+    };
+
+    const handleMouseUp = () => {
+      setIsDragging(false);
+      dragRef.current = null;
+    };
+
+    if (isDragging) {
+      window.addEventListener('mousemove', handleMouseMove);
+      window.addEventListener('mouseup', handleMouseUp);
+      window.addEventListener('touchmove', handleTouchMove);
+      window.addEventListener('touchend', handleMouseUp);
+    }
+
+    return () => {
+      window.removeEventListener('mousemove', handleMouseMove);
+      window.removeEventListener('mouseup', handleMouseUp);
+      window.removeEventListener('touchmove', handleTouchMove);
+      window.removeEventListener('touchend', handleMouseUp);
+    };
+  }, [isDragging]);
 
   const playSound = (frequency: number, duration: number) => {
     try {
@@ -152,7 +222,14 @@ const MascotWidget = () => {
   };
 
   return (
-    <div className="fixed bottom-24 left-6 z-40 flex flex-col items-start gap-4">
+    <div 
+      className="fixed z-40 flex flex-col items-start gap-4"
+      style={{ 
+        left: `${position.x}px`, 
+        bottom: `${position.y}px`,
+        cursor: isDragging ? 'grabbing' : 'grab'
+      }}
+    >
       {isOpen && (
         <div className="bg-background border-2 border-primary/20 rounded-2xl shadow-2xl p-4 w-80 animate-in slide-in-from-left-8 mb-2">
           <div className="flex items-start justify-between mb-3">
@@ -253,16 +330,23 @@ const MascotWidget = () => {
         </div>
       )}
 
-      <button
-        onClick={handleMascotClick}
-        className="relative group cursor-pointer"
-        aria-label="Chemistry buddy mascot - Click to interact!"
+      <div
+        onMouseDown={handleMouseDown}
+        onTouchStart={handleTouchStart}
+        onClick={(e) => {
+          // Only trigger click if not dragging
+          if (!isDragging && dragRef.current === null) {
+            handleMascotClick();
+          }
+        }}
+        className="relative group cursor-grab active:cursor-grabbing select-none"
+        aria-label="Chemistry buddy mascot - Drag to move, click to interact!"
       >
         <div className="absolute -inset-2 bg-gradient-to-r from-primary/20 via-accent/20 to-primary/20 rounded-full blur-xl opacity-75 group-hover:opacity-100 transition-opacity animate-pulse"></div>
         <img
           src={mascot}
           alt="ThinkChem Mascot"
-          className={`w-24 h-24 object-contain relative z-10 ${getAnimationClass()} hover:scale-110 transition-all duration-300 drop-shadow-2xl`}
+          className={`w-24 h-24 object-contain relative z-10 ${getAnimationClass()} hover:scale-110 transition-all duration-300 drop-shadow-2xl pointer-events-none`}
           style={{
             transformOrigin: 'center bottom',
           }}
@@ -272,7 +356,7 @@ const MascotWidget = () => {
             <Sparkles className="w-3 h-3 text-accent-foreground" />
           </div>
         )}
-      </button>
+      </div>
 
       <ChemistryQuizGame 
         isOpen={isQuizOpen} 

@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Card, CardContent } from "@/components/ui/card";
-import { GraduationCap, Award, Users, Beaker, BookOpen, Star } from "lucide-react";
+import { GraduationCap, Award, Users, Beaker, BookOpen } from "lucide-react";
 import instructorImage from "@/assets/instructor.jpg";
 
 const AboutInstructor = () => {
@@ -33,7 +33,7 @@ const AboutInstructor = () => {
   const achievements = [
     { icon: GraduationCap, label: "MBBS", desc: "University of Moratuwa" },
     { icon: Award, label: "6+ Years", desc: "Teaching Experience" },
-    { icon: Users, label: "1000+", desc: "Students Taught" },
+    { icon: Users, label: "100+", desc: "Students Taught" },
   ];
 
   const highlights = [
@@ -111,11 +111,6 @@ const AboutInstructor = () => {
               </div>
             </div>
 
-            {/* Floating badge */}
-            <div className="absolute -right-4 top-1/4 bg-accent text-accent-foreground px-4 py-2 rounded-full shadow-lg animate-bounce font-semibold flex items-center gap-2">
-              <Star className="w-4 h-4 fill-current" />
-              Top Rated
-            </div>
           </div>
 
           {/* Content section */}
