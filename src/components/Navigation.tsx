@@ -52,7 +52,7 @@ const Navigation = () => {
               </button>
             )}
             <Button 
-              onClick={() => location.pathname === "/" ? scrollToSection("services") : window.location.href = "/#services"}
+              onClick={() => location.pathname === "/" ? scrollToSection("contact") : window.location.href = "/#contact"}
               className="bg-accent text-accent-foreground hover:bg-accent/90 font-semibold shadow-md hover:shadow-lg transition-all"
             >
               Get Started
@@ -97,7 +97,7 @@ const Navigation = () => {
             <Button 
               onClick={() => {
                 setIsOpen(false);
-                location.pathname === "/" ? scrollToSection("services") : window.location.href = "/#services";
+                location.pathname === "/" ? scrollToSection("contact") : window.location.href = "/#contact";
               }}
               className="w-full bg-accent text-accent-foreground hover:bg-accent/90 font-semibold"
             >
