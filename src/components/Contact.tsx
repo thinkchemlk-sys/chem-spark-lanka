@@ -119,7 +119,7 @@ const Contact = () => {
   };
 
   return (
-    <section className="py-24 bg-background">
+    <section id="contact" className="py-24 bg-background">
       <div className="container mx-auto px-4">
         <div className="max-w-7xl mx-auto">
           <div className="border-4 border-accent rounded-3xl p-8 md:p-12 bg-card">
