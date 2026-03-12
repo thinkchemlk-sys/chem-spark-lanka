@@ -51,12 +51,12 @@ const Navigation = () => {
                 What We Do
               </button>
             )}
-            <Button 
-              onClick={() => location.pathname === "/" ? scrollToSection("contact") : window.location.href = "/#contact"}
-              className="bg-accent text-accent-foreground hover:bg-accent/90 font-semibold shadow-md hover:shadow-lg transition-all"
+            <a 
+              href="https://alchemi-learn-lab.vercel.app"
+              className="inline-flex items-center justify-center h-10 px-4 py-2 bg-accent text-accent-foreground hover:bg-accent/90 font-semibold shadow-md hover:shadow-lg transition-all rounded-md"
             >
               Get Started
-            </Button>
+            </a>
           </div>
 
           {/* Mobile Menu Button */}
