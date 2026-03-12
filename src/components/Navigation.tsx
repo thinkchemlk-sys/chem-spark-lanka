@@ -53,6 +53,8 @@ const Navigation = () => {
             )}
             <a 
               href="https://alchemi-learn-lab.vercel.app"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center justify-center h-10 px-4 py-2 bg-accent text-accent-foreground hover:bg-accent/90 font-semibold shadow-md hover:shadow-lg transition-all rounded-md"
             >
               Get Started
@@ -94,15 +96,15 @@ const Navigation = () => {
                 What We Do
               </button>
             )}
-            <Button 
-              onClick={() => {
-                setIsOpen(false);
-                location.pathname === "/" ? scrollToSection("contact") : window.location.href = "/#contact";
-              }}
-              className="w-full bg-accent text-accent-foreground hover:bg-accent/90 font-semibold"
+            <a 
+              href="https://alchemi-learn-lab.vercel.app"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => setIsOpen(false)}
+              className="w-full inline-flex items-center justify-center h-10 px-4 py-2 bg-accent text-accent-foreground hover:bg-accent/90 font-semibold rounded-md"
             >
               Get Started
-            </Button>
+            </a>
           </div>
         )}
       </div>
