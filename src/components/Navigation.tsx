@@ -97,7 +97,7 @@ const Navigation = () => {
               </button>
             )}
             <a 
-              href="https://alchemi-learn-lab.vercel.app"
+              href="https://lms.thinkchem.lk/"
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => setIsOpen(false)}
