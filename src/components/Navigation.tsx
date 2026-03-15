@@ -52,7 +52,7 @@ const Navigation = () => {
               </button>
             )}
             <a 
-              href="https://alchemi-learn-lab.vercel.app"
+              href="https://lms.thinkchem.lk/"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center h-10 px-4 py-2 bg-accent text-accent-foreground hover:bg-accent/90 font-semibold shadow-md hover:shadow-lg transition-all rounded-md"
@@ -97,7 +97,7 @@ const Navigation = () => {
               </button>
             )}
             <a 
-              href="https://alchemi-learn-lab.vercel.app"
+              href="https://lms.thinkchem.lk/"
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => setIsOpen(false)}
