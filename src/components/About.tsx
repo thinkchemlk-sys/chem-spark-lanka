@@ -59,10 +59,11 @@ const About = () => {
           {values.map((value, index) => {
             const Icon = value.icon;
             return (
-              <Card 
+              <Card
                 key={index}
-                className="p-8 hover:shadow-lg transition-all duration-300 border-border bg-card"
+                className="p-8 glass hover:shadow-2xl hover:-translate-y-1 transition-all duration-300"
               >
+
                 <div className="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mb-6">
                   <Icon className="w-8 h-8 text-primary" />
                 </div>
