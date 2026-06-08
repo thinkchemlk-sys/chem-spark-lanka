@@ -52,7 +52,7 @@ const ExamCountdown = () => {
           </p>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
-            <div className="bg-card border-2 border-accent/30 rounded-2xl p-6 transform hover:scale-105 transition-transform">
+            <div className="glass rounded-2xl p-6 transform hover:scale-105 transition-transform">
               <div className="text-4xl md:text-5xl font-bold text-primary mb-2">
                 {timeLeft.days}
               </div>
@@ -61,7 +61,7 @@ const ExamCountdown = () => {
               </div>
             </div>
 
-            <div className="bg-card border-2 border-accent/30 rounded-2xl p-6 transform hover:scale-105 transition-transform">
+            <div className="glass rounded-2xl p-6 transform hover:scale-105 transition-transform">
               <div className="text-4xl md:text-5xl font-bold text-primary mb-2">
                 {timeLeft.hours}
               </div>
@@ -70,7 +70,7 @@ const ExamCountdown = () => {
               </div>
             </div>
 
-            <div className="bg-card border-2 border-accent/30 rounded-2xl p-6 transform hover:scale-105 transition-transform">
+            <div className="glass rounded-2xl p-6 transform hover:scale-105 transition-transform">
               <div className="text-4xl md:text-5xl font-bold text-primary mb-2">
                 {timeLeft.minutes}
               </div>
@@ -79,7 +79,7 @@ const ExamCountdown = () => {
               </div>
             </div>
 
-            <div className="bg-card border-2 border-accent/30 rounded-2xl p-6 transform hover:scale-105 transition-transform">
+            <div className="glass rounded-2xl p-6 transform hover:scale-105 transition-transform">
               <div className="text-4xl md:text-5xl font-bold text-primary mb-2">
                 {timeLeft.seconds}
               </div>
