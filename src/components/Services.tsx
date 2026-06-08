@@ -161,7 +161,7 @@ const Services = () => {
           {locations.map((loc, i) => {
             const Icon = loc.icon;
             return (
-              <Card key={i} className="p-8 border-border bg-card text-center">
+              <Card key={i} className="p-8 glass text-center hover:shadow-2xl transition-all duration-300">
                 <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mx-auto mb-4">
                   <Icon className="w-7 h-7 text-primary" />
                 </div>
