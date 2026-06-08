@@ -31,15 +31,15 @@ const AboutInstructor = () => {
   }, []);
 
   const achievements = [
-    { icon: GraduationCap, label: "MBBS", desc: "University of Moratuwa" },
-    { icon: Award, label: "6+ Years", desc: "Teaching Experience" },
-    { icon: Users, label: "100+", desc: "Students Taught" },
+    { icon: GraduationCap, label: "MBBS (UG)", desc: "University of Moratuwa" },
+    { icon: Award, label: "6+ Years", desc: "A/L Teaching Experience" },
+    { icon: Users, label: "98%", desc: "A or B Grade Students" },
   ];
 
   const highlights = [
-    "ENFJ leader - passionate about empowering others",
-    "Active in Rotaract and Leo Club organizations",
-    "Transforming the impossible into reality",
+    "Bachelor of Medicine and Bachelor of Surgery (MBBS UG), Moratuwa",
+    "6 years A/L Chemistry teaching experience",
+    "Former A/L exam marker at SASIP Institute",
   ];
 
   return (
@@ -73,13 +73,13 @@ const AboutInstructor = () => {
           }`}
         >
           <span className="inline-block px-4 py-2 rounded-full bg-accent/20 text-primary font-semibold text-sm mb-4 animate-bounce">
-            Meet Your Instructor
+            Meet Your Chemistry Teacher
           </span>
           <h2 className="text-4xl lg:text-5xl font-bold text-foreground mb-4">
-            Learn from the <span className="text-primary">Best</span>
+            Meet Your <span className="text-primary">Chemistry Teacher</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Dedicated to transforming complex chemistry concepts into simple, understandable lessons
+            Guiding A/L students to top grades and Sri Lanka's leading universities.
           </p>
         </div>
 
@@ -125,10 +125,10 @@ const AboutInstructor = () => {
                 Passionate About <span className="text-accent">Chemistry</span> Education
               </h3>
               <p className="text-muted-foreground leading-relaxed">
-                I am Sithira Harischandra, an undergraduate pursuing a Bachelor of Medicine, Bachelor of Surgery (MBBS) at the University of Moratuwa. Beyond my academic journey in medicine, I am deeply passionate about sharing knowledge, which has led me to 6+ years of experience in teaching. My long-term vision is to integrate education into my career, empowering others through learning.
+                Sithira Harischandra is an MBBS undergraduate at the University of Moratuwa, Sri Lanka. With 6 years of experience teaching A/L Chemistry, he has guided students to achieve their target grades and secure places at Sri Lanka's top government universities.
               </p>
               <p className="text-muted-foreground leading-relaxed">
-                As an ENFJ, my extroverted nature fuels my drive to collaborate and lead, allowing me to contribute actively to organizations like Rotaract and the Leo Club at my alumnus. I am a firm believer in pushing boundaries, embracing challenges, and transforming the impossible into reality. With an optimistic outlook and unwavering determination, I continuously strive to surpass my limits and achieve my goals.
+                He brings the same clarity and student-centred approach to every class — breaking down complex organic chemistry mechanisms, thermodynamics, and electrochemistry into structured, memorable explanations that stick. 98% of his students have achieved an A or B grade in A/L Chemistry (English Medium).
               </p>
             </div>
 
