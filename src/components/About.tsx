@@ -78,7 +78,7 @@ const About = () => {
           })}
         </div>
 
-        <div className="mt-16 max-w-4xl mx-auto bg-primary text-primary-foreground rounded-2xl p-10 md:p-12 shadow-xl">
+        <div className="mt-16 max-w-4xl mx-auto glass-dark text-primary-foreground rounded-2xl p-10 md:p-12 shadow-2xl">
           <div className="grid md:grid-cols-3 gap-8 text-center">
             <div>
               <div className="text-4xl md:text-5xl font-display font-bold mb-2 text-accent">6+</div>
