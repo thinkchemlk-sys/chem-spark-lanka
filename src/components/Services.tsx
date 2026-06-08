@@ -127,7 +127,7 @@ const Services = () => {
 
         <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto mb-24">
           {courses.map((c, i) => (
-            <Card key={i} className="p-8 border-border bg-card flex flex-col">
+            <Card key={i} className="p-8 glass flex flex-col hover:shadow-2xl transition-all duration-300">
               <h3 className="font-display font-bold text-2xl text-foreground mb-4">
                 {c.title}
               </h3>
