@@ -101,8 +101,9 @@ const Services = () => {
           {features.map((f, i) => (
             <Card
               key={i}
-              className="p-8 hover:shadow-xl transition-all duration-300 border-border bg-card"
+              className="p-8 glass hover:shadow-2xl hover:-translate-y-1 transition-all duration-300"
             >
+
               <div className="text-4xl mb-4">{f.emoji}</div>
               <h3 className="font-display font-bold text-xl text-foreground mb-3">
                 {f.title}
