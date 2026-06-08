@@ -37,7 +37,7 @@ const Testimonials = () => {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {testimonials.map((testimonial, index) => (
-            <Card key={index} className="hover:shadow-xl transition-shadow">
+            <Card key={index} className="glass hover:shadow-2xl hover:-translate-y-1 transition-all duration-300">
               <CardContent className="pt-6">
                 <div className="flex mb-4">
                   {[...Array(testimonial.rating)].map((_, i) => (
