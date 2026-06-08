@@ -28,10 +28,10 @@ const Testimonials = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-4xl font-display font-bold text-foreground mb-4">
-            Student Success Stories
+            What Our Students Say
           </h2>
           <p className="text-xl text-muted-foreground">
-            Hear from our successful A/L Chemistry students
+            Real results from real A/L Chemistry students across Sri Lanka.
           </p>
         </div>
 

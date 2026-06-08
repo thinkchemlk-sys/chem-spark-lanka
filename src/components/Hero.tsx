@@ -27,27 +27,35 @@ const Hero = () => {
       <div className="container mx-auto px-4 z-10">
         <div className="max-w-3xl">
           <div className="inline-block mb-4 px-4 py-2 bg-accent/20 backdrop-blur-sm rounded-full border border-accent/30">
-            <span className="text-accent font-semibold">Advanced Level Chemistry</span>
+            <span className="text-accent font-semibold">2026 & 2027 A/L Chemistry</span>
           </div>
-          
-          <h1 className="font-display font-bold text-5xl md:text-6xl lg:text-7xl text-white mb-6 leading-tight">
-            Master Chemistry,
-            <span className="text-accent block mt-2">Excel in A-Levels</span>
+
+          <h1 className="font-display font-bold text-4xl md:text-5xl lg:text-6xl text-white mb-6 leading-tight">
+            A/L Chemistry Classes for English Medium Students
+            <span className="text-accent block mt-2">Online & In-Person</span>
           </h1>
-          
+
           <p className="text-xl md:text-2xl text-white/90 mb-8 leading-relaxed">
-            Expert chemistry education tailored for advanced level students in Sri Lanka. 
-            Comprehensive courses designed to unlock your full potential.
+            Expert-led chemistry tuition for Advanced Level students. Clear explanations,
+            structured notes, and a track record that speaks for itself.
           </p>
-          
+
           <div className="flex flex-col sm:flex-row gap-4">
-            <Button 
+            <Button
               size="lg"
               onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
               className="bg-accent text-accent-foreground hover:bg-accent/90 font-bold text-lg px-8 py-6 shadow-xl hover:shadow-2xl transition-all group"
             >
-              Learn More
+              Enrol Now — Free First Class
               <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
+            </Button>
+            <Button
+              size="lg"
+              variant="outline"
+              onClick={scrollToServices}
+              className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-primary font-bold text-lg px-8 py-6 transition-all"
+            >
+              View Our Courses
             </Button>
           </div>
         </div>
