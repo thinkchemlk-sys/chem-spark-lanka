@@ -7,39 +7,40 @@ const WorkProcess = () => {
       icon: BookOpen,
       title: "Accurate Subject Matter",
       description: "We start with comprehensive coverage of the A-Level syllabus, ensuring every concept is explained with precision and clarity.",
-      color: "bg-blue-500/10 text-blue-600"
+      tone: "primary",
     },
     {
       icon: FileText,
       title: "Short Revision Papers",
       description: "Regular mini-tests and revision papers help reinforce learning and identify areas that need more attention.",
-      color: "bg-purple-500/10 text-purple-600"
+      tone: "accent",
     },
     {
       icon: FlaskConical,
       title: "Fun Practical Assignments",
       description: "Engaging hands-on experiments and real-world applications make chemistry come alive and easier to remember.",
-      color: "bg-green-500/10 text-green-600"
+      tone: "primary",
     },
     {
       icon: Target,
       title: "Targeted Practice",
       description: "Extensive MCQ practice sessions and past paper analysis to master exam techniques and time management.",
-      color: "bg-orange-500/10 text-orange-600"
+      tone: "accent",
     },
     {
       icon: Calendar,
       title: "Flexible Timeline Adjustment",
       description: "We adapt our teaching pace based on your progress, ensuring you're always on track for exam success.",
-      color: "bg-pink-500/10 text-pink-600"
+      tone: "primary",
     },
     {
       icon: Award,
       title: "Continuous Assessment",
       description: "Regular feedback and performance tracking help you monitor your progress and celebrate your achievements.",
-      color: "bg-cyan-500/10 text-cyan-600"
-    }
-  ];
+      tone: "accent",
+    },
+  ] as const;
+
 
   return (
     <section className="py-24 bg-gradient-to-b from-secondary/20 to-background relative overflow-hidden">
