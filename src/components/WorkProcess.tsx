@@ -101,7 +101,7 @@ const WorkProcess = () => {
         </div>
 
         <div className="mt-16 text-center">
-          <div className="inline-block bg-primary/10 backdrop-blur-sm rounded-2xl px-8 py-6 border border-primary/20">
+          <div className="inline-block glass-accent rounded-2xl px-8 py-6">
             <p className="text-lg font-semibold text-foreground mb-2">
               🎯 Result-Oriented Approach
             </p>
@@ -110,6 +110,7 @@ const WorkProcess = () => {
             </p>
           </div>
         </div>
+
       </div>
     </section>
   );
