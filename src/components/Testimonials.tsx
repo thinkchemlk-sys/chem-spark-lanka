@@ -24,7 +24,7 @@ const testimonials = [
 
 const Testimonials = () => {
   return (
-    <section className="py-20 bg-secondary/20">
+    <section className="py-20">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-4xl font-display font-bold text-foreground mb-4">
@@ -37,7 +37,7 @@ const Testimonials = () => {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {testimonials.map((testimonial, index) => (
-            <Card key={index} className="hover:shadow-xl transition-shadow">
+            <Card key={index} className="glass hover:shadow-2xl hover:-translate-y-1 transition-all duration-300">
               <CardContent className="pt-6">
                 <div className="flex mb-4">
                   {[...Array(testimonial.rating)].map((_, i) => (

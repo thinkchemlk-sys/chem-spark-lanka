@@ -119,10 +119,11 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-24 bg-background">
+    <section id="contact" className="py-24">
       <div className="container mx-auto px-4">
         <div className="max-w-7xl mx-auto">
-          <div className="border-4 border-accent rounded-3xl p-8 md:p-12 bg-card">
+          <div className="glass-strong border-2 border-accent/40 rounded-3xl p-8 md:p-12 shadow-2xl">
+
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               {/* Left side - Content */}
               <div className="space-y-8">

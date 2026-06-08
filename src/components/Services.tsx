@@ -85,7 +85,7 @@ const Services = () => {
     document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
 
   return (
-    <section id="services" className="py-24 bg-background">
+    <section id="services" className="py-24">
       <div className="container mx-auto px-4">
         {/* Why ThinkChem */}
         <div className="max-w-3xl mx-auto text-center mb-16">
@@ -101,8 +101,9 @@ const Services = () => {
           {features.map((f, i) => (
             <Card
               key={i}
-              className="p-8 hover:shadow-xl transition-all duration-300 border-border bg-card"
+              className="p-8 glass hover:shadow-2xl hover:-translate-y-1 transition-all duration-300"
             >
+
               <div className="text-4xl mb-4">{f.emoji}</div>
               <h3 className="font-display font-bold text-xl text-foreground mb-3">
                 {f.title}
@@ -126,7 +127,7 @@ const Services = () => {
 
         <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto mb-24">
           {courses.map((c, i) => (
-            <Card key={i} className="p-8 border-border bg-card flex flex-col">
+            <Card key={i} className="p-8 glass flex flex-col hover:shadow-2xl transition-all duration-300">
               <h3 className="font-display font-bold text-2xl text-foreground mb-4">
                 {c.title}
               </h3>
@@ -160,7 +161,7 @@ const Services = () => {
           {locations.map((loc, i) => {
             const Icon = loc.icon;
             return (
-              <Card key={i} className="p-8 border-border bg-card text-center">
+              <Card key={i} className="p-8 glass text-center hover:shadow-2xl transition-all duration-300">
                 <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mx-auto mb-4">
                   <Icon className="w-7 h-7 text-primary" />
                 </div>

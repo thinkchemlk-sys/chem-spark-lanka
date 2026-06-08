@@ -22,7 +22,7 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="py-24 bg-secondary/30">
+    <section id="about" className="py-24">
       <div className="container mx-auto px-4">
         <div className="max-w-3xl mx-auto text-center mb-16">
           <h2 className="font-display font-bold text-4xl md:text-5xl text-foreground mb-6">
@@ -59,10 +59,11 @@ const About = () => {
           {values.map((value, index) => {
             const Icon = value.icon;
             return (
-              <Card 
+              <Card
                 key={index}
-                className="p-8 hover:shadow-lg transition-all duration-300 border-border bg-card"
+                className="p-8 glass hover:shadow-2xl hover:-translate-y-1 transition-all duration-300"
               >
+
                 <div className="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mb-6">
                   <Icon className="w-8 h-8 text-primary" />
                 </div>
@@ -77,7 +78,7 @@ const About = () => {
           })}
         </div>
 
-        <div className="mt-16 max-w-4xl mx-auto bg-primary text-primary-foreground rounded-2xl p-10 md:p-12 shadow-xl">
+        <div className="mt-16 max-w-4xl mx-auto glass-dark text-primary-foreground rounded-2xl p-10 md:p-12 shadow-2xl">
           <div className="grid md:grid-cols-3 gap-8 text-center">
             <div>
               <div className="text-4xl md:text-5xl font-display font-bold mb-2 text-accent">6+</div>
