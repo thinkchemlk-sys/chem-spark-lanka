@@ -63,16 +63,20 @@ const WorkProcess = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
           {steps.map((step, index) => {
             const Icon = step.icon;
+            const iconClasses =
+              step.tone === "accent"
+                ? "bg-accent/20 text-accent-foreground border border-accent/40"
+                : "bg-primary/10 text-primary border border-primary/20";
             return (
-              <Card 
+              <Card
                 key={index}
-                className="group hover:shadow-2xl transition-all duration-300 border-border bg-card relative overflow-hidden"
+                className="group glass hover:shadow-2xl transition-all duration-300 relative overflow-hidden"
               >
                 <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-primary/10 to-transparent rounded-bl-full transform translate-x-8 -translate-y-8"></div>
-                
+
                 <CardContent className="pt-8 pb-8 relative">
                   <div className="flex items-start gap-4">
-                    <div className={`w-14 h-14 ${step.color} rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform`}>
+                    <div className={`w-14 h-14 ${iconClasses} rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform`}>
                       <Icon className="w-7 h-7" />
                     </div>
                     <div className="flex-1">
@@ -93,6 +97,7 @@ const WorkProcess = () => {
               </Card>
             );
           })}
+
         </div>
 
         <div className="mt-16 text-center">
