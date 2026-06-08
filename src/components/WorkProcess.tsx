@@ -43,7 +43,7 @@ const WorkProcess = () => {
 
 
   return (
-    <section className="py-24 bg-gradient-to-b from-secondary/20 to-background relative overflow-hidden">
+    <section className="py-24 relative overflow-hidden">
       {/* Decorative background elements */}
       <div className="absolute inset-0 opacity-30">
         <div className="absolute top-20 left-10 w-72 h-72 bg-primary/20 rounded-full blur-3xl"></div>
