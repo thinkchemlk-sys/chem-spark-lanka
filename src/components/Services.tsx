@@ -85,7 +85,7 @@ const Services = () => {
     document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
 
   return (
-    <section id="services" className="py-24 bg-background">
+    <section id="services" className="py-24">
       <div className="container mx-auto px-4">
         {/* Why ThinkChem */}
         <div className="max-w-3xl mx-auto text-center mb-16">
