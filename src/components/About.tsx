@@ -1,96 +1,82 @@
-import { Target, Users, Award } from "lucide-react";
-import { Card } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { ArrowRight } from "lucide-react";
 import tutorImage from "@/assets/tutor.png";
 
 const About = () => {
-  const values = [
-    {
-      icon: Target,
-      title: "Our Mission",
-      description: "To provide exceptional chemistry education that empowers A-Level students to achieve academic excellence and develop a deep understanding of chemical principles."
-    },
-    {
-      icon: Users,
-      title: "Expert Educators",
-      description: "Our team comprises experienced chemistry educators with proven track records in guiding students to outstanding A-Level results."
-    },
-    {
-      icon: Award,
-      title: "Proven Success",
-      description: "Years of successful student outcomes demonstrate our commitment to quality education and student achievement."
-    }
-  ];
-
   return (
     <section id="about" className="py-24">
       <div className="container mx-auto px-4">
-        <div className="max-w-3xl mx-auto text-center mb-16">
-          <h2 className="font-display font-bold text-4xl md:text-5xl text-foreground mb-6">
-            About Us
-          </h2>
-        </div>
-
-        <div className="grid lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto mb-16">
-          <div className="flex justify-center">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center max-w-6xl mx-auto">
+          {/* Image */}
+          <div className="flex justify-center lg:justify-start">
             <div className="relative">
-              <div className="absolute inset-0 bg-primary/20 blur-3xl rounded-full"></div>
-              <img 
-                src={tutorImage} 
-                alt="Expert Chemistry Tutor" 
+              <div className="absolute -inset-6 bg-accent/20 blur-3xl rounded-full"></div>
+              <img
+                src={tutorImage}
+                alt="Sithira Harischandra — ThinkChem A/L Chemistry Instructor"
                 className="relative w-full max-w-md h-auto object-contain drop-shadow-2xl animate-fade-in"
               />
             </div>
           </div>
 
+          {/* Content */}
           <div>
-            <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-              We are dedicated chemistry educators passionate about helping advanced level students in Sri Lanka 
-              reach their full potential. Our comprehensive approach combines deep subject knowledge with 
-              innovative teaching methods to make complex chemistry concepts accessible and engaging.
+            <div className="w-16 h-1.5 bg-accent rounded-full mb-6"></div>
+            <h2 className="font-display font-bold text-4xl md:text-5xl text-foreground mb-3">
+              About ThinkChem
+            </h2>
+            <p className="text-accent-foreground/90 font-semibold text-xl mb-6">
+              <span className="text-primary">Sithira Harischandra</span>
+              <span className="text-muted-foreground font-normal text-base"> — MBBS (UG), 6+ Years A/L Chemistry</span>
             </p>
-            <p className="text-lg text-muted-foreground leading-relaxed">
-              With years of experience in A-Level chemistry education, our team is committed to providing 
-              personalized attention and support to help each student excel in their academic journey.
-            </p>
+
+            <div className="space-y-5 text-base md:text-lg text-muted-foreground leading-relaxed">
+              <p>
+                In just 6 years of teaching, ThinkChem has grown into one of the most trusted A/L Chemistry
+                programmes for English medium students across Sri Lanka — with hundreds of students every year
+                joining from Colombo, the suburbs, and online from every district of the island.
+              </p>
+              <p>
+                Our results speak for themselves. <span className="text-foreground font-semibold">98% of our students achieve an A or B grade</span> at
+                the A/L exam, and many have ranked among the top chemistry performers in the country. This kind of
+                consistency in such a short time is almost unheard of in Sri Lankan A/L education.
+              </p>
+              <p>
+                Led by <span className="text-foreground font-semibold">Sithira Harischandra (MBBS undergraduate &amp; SASIP exam marker)</span>,
+                ThinkChem combines syllabus-perfect teaching, structured notes, and real exam technique — so every
+                student walks into the exam hall confident, prepared, and ready to excel.
+              </p>
+            </div>
+
+            <div className="mt-8">
+              <Button
+                size="lg"
+                className="bg-accent text-accent-foreground hover:bg-accent/90 rounded-full px-8 shadow-lg group"
+                asChild
+              >
+                <a href="https://lms.thinkchem.lk/" target="_blank" rel="noopener noreferrer">
+                  Join Now
+                  <ArrowRight className="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1" />
+                </a>
+              </Button>
+            </div>
           </div>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-          {values.map((value, index) => {
-            const Icon = value.icon;
-            return (
-              <Card
-                key={index}
-                className="p-8 glass hover:shadow-2xl hover:-translate-y-1 transition-all duration-300"
-              >
-
-                <div className="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mb-6">
-                  <Icon className="w-8 h-8 text-primary" />
-                </div>
-                <h3 className="font-display font-bold text-xl text-foreground mb-4">
-                  {value.title}
-                </h3>
-                <p className="text-muted-foreground leading-relaxed">
-                  {value.description}
-                </p>
-              </Card>
-            );
-          })}
-        </div>
-
-        <div className="mt-16 max-w-4xl mx-auto glass-dark text-primary-foreground rounded-2xl p-10 md:p-12 shadow-2xl">
+        {/* Stats */}
+        <div className="mt-20 max-w-4xl mx-auto glass-dark text-primary-foreground rounded-2xl p-10 md:p-12 shadow-2xl">
           <div className="grid md:grid-cols-3 gap-8 text-center">
             <div>
               <div className="text-4xl md:text-5xl font-display font-bold mb-2 text-accent">6+</div>
               <div className="text-primary-foreground/90 font-medium">Years Experience</div>
             </div>
             <div>
-              <div className="text-4xl md:text-5xl font-display font-bold mb-2 text-accent">100+</div>
+              <div className="text-4xl md:text-5xl font-display font-bold mb-2 text-accent">500+</div>
               <div className="text-primary-foreground/90 font-medium">Students Taught</div>
             </div>
             <div>
-              <div className="text-4xl md:text-5xl font-display font-bold mb-2 text-accent">95%</div>
-              <div className="text-primary-foreground/90 font-medium">Success Rate</div>
+              <div className="text-4xl md:text-5xl font-display font-bold mb-2 text-accent">98%</div>
+              <div className="text-primary-foreground/90 font-medium">A or B Grade</div>
             </div>
           </div>
         </div>
