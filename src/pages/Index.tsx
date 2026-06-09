@@ -1,5 +1,6 @@
 import Navigation from "@/components/Navigation";
 import Hero from "@/components/Hero";
+import CategoryCarousel from "@/components/CategoryCarousel";
 import ExamCountdown from "@/components/ExamCountdown";
 import About from "@/components/About";
 import WorkProcess from "@/components/WorkProcess";
@@ -17,6 +18,7 @@ const Index = () => {
     <div className="min-h-screen">
       <Navigation />
       <Hero />
+      <CategoryCarousel />
       <ExamCountdown />
       <About />
       <WorkProcess />
