@@ -43,8 +43,8 @@ const Services = () => {
         "Designed for Grade 12 students beginning their A/L journey. Covers all 14 units of the NIE Chemistry syllabus with regular unit tests, term assessments, and exam technique workshops.",
       bullets: [
         "Duration: 2 academic years (Grade 12 + 13)",
-        "Mode: Physical",
-        "Mode: Physical + recorded access",
+        "Medium: English",
+        "Mode: Online (live) + recorded access",
       ],
     },
     {
@@ -63,21 +63,21 @@ const Services = () => {
     {
       icon: MapPin,
       tag: "In-Person Classes",
-      title: "Nugegoda\n\nBokundara,Piliyanda\n",
-      description: "\nNo. 97/1/1, Stanley Thilakarathna Mawatha, Nugegoda, Sri Lanka\n",
+      title: "CIEC — Nugegoda",
+      description: "341/22 Kotte Road, Welikada, Rajagiriya, Sri Lanka",
     },
     {
       icon: MapPin,
       tag: "In-Person Classes",
-      title: "97/1/1, Stanley Thilakarathna Mawatha, Nugegoda, Sri Lanka\n\nContact Institute: 077 780 2090\nContact Tutor: 075 847 9501",
-      description: "Join our in-person batches in the Piliyandala area.\n\nContact Tutor: 075 847 9501\n",
+      title: "Bokundara, Piliyandala",
+      description: "Join our in-person batches in the Piliyandala area.",
     },
     {
       icon: Monitor,
       tag: "Online Classes",
       title: "Live via Zoom / Google Meet",
       description:
-        "Join from anywhere in Sri Lanka. All you need is a phone or laptop and a stable internet connection.\nContact Tutor: 075 847 9501\n",
+        "Join from anywhere in Sri Lanka. All you need is a phone or laptop and a stable internet connection.",
     },
   ];
 
@@ -90,10 +90,10 @@ const Services = () => {
         {/* Why ThinkChem */}
         <div className="max-w-3xl mx-auto text-center mb-16">
           <h2 className="font-display font-bold text-4xl md:text-5xl text-foreground mb-6">
-            Why English Medium A/L Students Choose ThinkChem?
+            Why 500+ A/L Students Choose ThinkChem Every Year
           </h2>
-          <p className="text-lg text-muted-foreground leading-relaxed whitespace-pre-line">
-            {"\n"}
+          <p className="text-lg text-muted-foreground leading-relaxed">
+            Syllabus-aligned chemistry tuition for English medium A/L students — online and in-person across Sri Lanka.
           </p>
         </div>
 
@@ -116,7 +116,7 @@ const Services = () => {
         {/* Courses */}
         <div id="courses" className="max-w-3xl mx-auto text-center mb-12">
           <h2 className="font-display font-bold text-4xl md:text-5xl text-foreground mb-6">
-            A/L Chemistry Courses for  Students
+            A/L Chemistry Courses for 2026 & 2027 Students
           </h2>
           <p className="text-lg text-muted-foreground leading-relaxed">
             Whether you're just starting Grade 12 or in your final stretch before the A/L exam,
@@ -168,10 +168,10 @@ const Services = () => {
                 <p className="text-sm font-semibold text-accent-foreground bg-accent inline-block px-3 py-1 rounded-full mb-3">
                   {loc.tag}
                 </p>
-                  <h3 className="font-display font-bold text-xl text-foreground mb-2 whitespace-pre-line">
-                    {loc.title}
-                  </h3>
-                  <p className="text-muted-foreground leading-relaxed whitespace-pre-line">{loc.description}</p>
+                <h3 className="font-display font-bold text-xl text-foreground mb-2">
+                  {loc.title}
+                </h3>
+                <p className="text-muted-foreground leading-relaxed">{loc.description}</p>
               </Card>
             );
           })}
