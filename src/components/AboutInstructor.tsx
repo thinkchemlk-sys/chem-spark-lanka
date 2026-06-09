@@ -1,210 +1,112 @@
 import { useState, useEffect } from "react";
-import { Card, CardContent } from "@/components/ui/card";
-import { GraduationCap, Award, Users, Beaker, BookOpen } from "lucide-react";
+import { ArrowRight, Award } from "lucide-react";
 import instructorImage from "@/assets/instructor.jpg";
 
 const AboutInstructor = () => {
   const [isVisible, setIsVisible] = useState(false);
-  const [activeIndex, setActiveIndex] = useState(0);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        }
+        if (entry.isIntersecting) setIsVisible(true);
       },
       { threshold: 0.2 }
     );
-
     const section = document.getElementById("instructor");
     if (section) observer.observe(section);
-
     return () => observer.disconnect();
   }, []);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setActiveIndex((prev) => (prev + 1) % 3);
-    }, 3000);
-    return () => clearInterval(interval);
-  }, []);
-
-  const achievements = [
-    { icon: GraduationCap, label: "MBBS (UG)", desc: "University of Moratuwa" },
-    { icon: Award, label: "6+ Years", desc: "A/L Teaching Experience" },
-    { icon: Users, label: "98%", desc: "A or B Grade Students" },
-  ];
-
-  const highlights = [
-    "Bachelor of Medicine and Bachelor of Surgery (MBBS UG), Moratuwa",
-    "6 years A/L Chemistry teaching experience",
-    "Former A/L exam marker at SASIP Institute",
-  ];
-
   return (
     <section id="instructor" className="py-20 lg:py-28 relative overflow-hidden">
-      {/* Animated background elements */}
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/5" />
-      
-      {/* Floating molecules animation */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {[...Array(6)].map((_, i) => (
-          <div
-            key={i}
-            className="absolute rounded-full bg-primary/10 animate-pulse"
-            style={{
-              width: `${20 + i * 15}px`,
-              height: `${20 + i * 15}px`,
-              left: `${10 + i * 15}%`,
-              top: `${20 + i * 10}%`,
-              animationDelay: `${i * 0.5}s`,
-              animationDuration: `${3 + i}s`,
-            }}
-          />
-        ))}
-      </div>
+      {/* Decorative background circles */}
+      <div className="absolute top-10 right-0 w-72 h-72 rounded-full bg-accent/10 blur-3xl pointer-events-none" />
+      <div className="absolute bottom-10 left-10 w-56 h-56 rounded-full bg-accent/15 pointer-events-none" />
 
       <div className="container mx-auto px-4 relative z-10">
-        {/* Section header */}
-        <div 
-          className={`text-center mb-16 transition-all duration-1000 ${
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-          }`}
-        >
-          <span className="inline-block px-4 py-2 rounded-full bg-accent/20 text-primary font-semibold text-sm mb-4 animate-bounce">
-            Meet Your Chemistry Teacher
-          </span>
-          <h2 className="text-4xl lg:text-5xl font-bold text-foreground mb-4">
-            Meet Your <span className="text-primary">Chemistry Teacher</span>
-          </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Guiding A/L students to top grades and Sri Lanka's leading universities.
-          </p>
-        </div>
-
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-          {/* Image section with creative frame */}
-          <div 
-            className={`relative transition-all duration-1000 delay-300 ${
-              isVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-20"
+          {/* Image side */}
+          <div
+            className={`relative transition-all duration-1000 ${
+              isVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-12"
             }`}
           >
-            {/* Decorative elements */}
-            <div className="absolute -top-6 -left-6 w-24 h-24 border-4 border-accent rounded-tl-3xl animate-pulse" />
-            <div className="absolute -bottom-6 -right-6 w-24 h-24 border-4 border-primary rounded-br-3xl animate-pulse" style={{ animationDelay: "0.5s" }} />
-            
-            {/* Main image container */}
-            <div className="relative group">
-              <div className="absolute inset-0 bg-gradient-to-tr from-primary to-accent rounded-2xl transform rotate-3 group-hover:rotate-6 transition-transform duration-500" />
-              <div className="relative bg-background rounded-2xl overflow-hidden shadow-lg transform group-hover:-translate-y-2 transition-all duration-500 max-w-xs mx-auto">
-                <img
-                  src={instructorImage}
-                  alt="Sithira Harischandra - Chemistry Instructor"
-                  className="w-full h-auto object-cover aspect-[3/4]"
-                />
-                {/* Overlay with name */}
-                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-primary/90 to-transparent p-4">
-                  <h3 className="text-xl font-bold text-primary-foreground">Sithira Harischandra</h3>
-                  <p className="text-primary-foreground/80 text-sm">MBBS Undergraduate | Chemistry Educator</p>
+            {/* Yellow accent shapes */}
+            <div className="absolute -top-6 -left-6 w-32 h-32 rounded-full bg-accent/40 -z-0" />
+            <div className="absolute -bottom-8 -right-4 w-24 h-24 rounded-full bg-accent/30 -z-0" />
+
+            <div className="relative max-w-md mx-auto">
+              <img
+                src={instructorImage}
+                alt="Sithira Harischandra - A/L Chemistry Instructor"
+                className="relative w-full h-auto object-cover rounded-3xl shadow-2xl"
+              />
+
+              {/* Award badge */}
+              <div className="absolute -bottom-6 -left-6 glass-strong rounded-2xl p-4 flex items-center gap-3 shadow-xl border border-accent/40">
+                <div className="w-12 h-12 rounded-full bg-accent flex items-center justify-center">
+                  <Award className="w-6 h-6 text-primary" />
+                </div>
+                <div>
+                  <p className="font-bold text-primary text-sm leading-tight">98% A/B</p>
+                  <p className="text-xs text-muted-foreground leading-tight">Grade Students</p>
                 </div>
               </div>
             </div>
-
           </div>
 
-          {/* Content section */}
-          <div 
-            className={`space-y-8 transition-all duration-1000 delay-500 ${
-              isVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-20"
+          {/* Content side */}
+          <div
+            className={`space-y-6 transition-all duration-1000 delay-200 ${
+              isVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-12"
             }`}
           >
-            {/* Introduction text */}
-            <div className="space-y-4">
-              <h3 className="text-2xl lg:text-3xl font-bold text-foreground">
-                Passionate About <span className="text-accent">Chemistry</span> Education
-              </h3>
-              <p className="text-muted-foreground leading-relaxed">
-                Sithira Harischandra is an MBBS undergraduate at the University of Moratuwa, Sri Lanka. With 6 years of experience teaching A/L Chemistry, he has guided students to achieve their target grades and secure places at Sri Lanka's top government universities.
-              </p>
-              <p className="text-muted-foreground leading-relaxed">
-                He brings the same clarity and student-centred approach to every class — breaking down complex organic chemistry mechanisms, thermodynamics, and electrochemistry into structured, memorable explanations that stick. 98% of his students have achieved an A or B grade in A/L Chemistry (English Medium).
-              </p>
-            </div>
+            {/* Yellow underline bar */}
+            <div className="w-16 h-1 bg-accent rounded-full" />
 
-            {/* Achievement cards with animation */}
-            <div className="grid grid-cols-3 gap-4">
-              {achievements.map((item, index) => (
-                <Card 
-                  key={index}
-                  className={`text-center p-4 transition-all duration-500 cursor-pointer ${
-                    activeIndex === index 
-                      ? "bg-primary text-primary-foreground scale-105 shadow-lg" 
-                      : "bg-card hover:bg-secondary"
-                  }`}
-                  style={{ transitionDelay: `${index * 100}ms` }}
-                >
-                  <CardContent className="p-0 space-y-2">
-                    <item.icon className={`w-8 h-8 mx-auto ${
-                      activeIndex === index ? "text-primary-foreground" : "text-primary"
-                    }`} />
-                    <p className="font-bold text-lg">{item.label}</p>
-                    <p className={`text-xs ${
-                      activeIndex === index ? "text-primary-foreground/80" : "text-muted-foreground"
-                    }`}>{item.desc}</p>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
+            <h2 className="text-4xl lg:text-5xl font-bold text-foreground leading-tight">
+              About ThinkChem
+            </h2>
 
-            {/* Highlights with animated bullets */}
-            <div className="space-y-3">
-              {highlights.map((highlight, index) => (
-                <div 
-                  key={index}
-                  className="flex items-center gap-3 group"
-                  style={{ 
-                    animation: isVisible ? `fadeInLeft 0.5s ease-out ${0.8 + index * 0.2}s forwards` : undefined,
-                    opacity: isVisible ? 1 : 0,
-                  }}
-                >
-                  <div className="w-8 h-8 rounded-full bg-accent/20 flex items-center justify-center group-hover:bg-accent group-hover:scale-110 transition-all duration-300">
-                    <Beaker className="w-4 h-4 text-primary group-hover:text-accent-foreground" />
-                  </div>
-                  <span className="text-foreground group-hover:text-primary transition-colors">
-                    {highlight}
-                  </span>
-                </div>
-              ))}
+            <p className="text-accent font-semibold text-lg">
+              Sithira Harischandra — MBBS (UG), Moratuwa
+            </p>
+
+            <div className="space-y-4 text-muted-foreground leading-relaxed">
+              <p>
+                Sithira is an MBBS undergraduate at the University of Moratuwa with
+                6+ years of experience teaching A/L Chemistry in English Medium.
+                He has guided hundreds of students to top grades and placements at
+                Sri Lanka's leading government universities.
+              </p>
+              <p>
+                His student-centred approach breaks down complex organic mechanisms,
+                thermodynamics, and electrochemistry into structured, memorable
+                lessons that stick. A former A/L exam marker at SASIP Institute,
+                he knows exactly what examiners are looking for.
+              </p>
+              <p>
+                The result: <span className="text-foreground font-semibold">98% of
+                ThinkChem students</span> have achieved an A or B grade in A/L
+                Chemistry (English Medium).
+              </p>
             </div>
 
             {/* CTA */}
             <div className="pt-4">
               <a
-                href="#contact"
-                className="inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-4 rounded-full font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300"
+                href="https://lms.thinkchem.lk/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-3 bg-accent hover:bg-accent/90 text-primary px-8 py-4 rounded-full font-bold shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300"
               >
-                <BookOpen className="w-5 h-5" />
-                Start Learning Today
+                Join Now
+                <ArrowRight className="w-5 h-5" />
               </a>
             </div>
           </div>
         </div>
       </div>
-
-      {/* Custom animation keyframes */}
-      <style>{`
-        @keyframes fadeInLeft {
-          from {
-            opacity: 0;
-            transform: translateX(-20px);
-          }
-          to {
-            opacity: 1;
-            transform: translateX(0);
-          }
-        }
-      `}</style>
     </section>
   );
 };
