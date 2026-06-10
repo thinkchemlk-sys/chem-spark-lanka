@@ -8,6 +8,7 @@ import Services from "@/components/Services";
 import Testimonials from "@/components/Testimonials";
 import AboutInstructor from "@/components/AboutInstructor";
 import FAQ from "@/components/FAQ";
+import FutureAwaits from "@/components/FutureAwaits";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import WhatsAppWidget from "@/components/WhatsAppWidget";
@@ -25,6 +26,7 @@ const Index = () => {
       <Services />
       <Testimonials />
       <AboutInstructor />
+      <FutureAwaits />
       <FAQ />
       <Contact />
       <Footer />
