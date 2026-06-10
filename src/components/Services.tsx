@@ -63,7 +63,7 @@ const Services = () => {
       icon: MapPin,
       tag: "In-Person Classes",
       title: "CIEC — Nugegoda",
-      description: "\n\nNo. 97/1/1, Stanley Thilakarathna Mawatha, Nugegoda, Sri Lanka",
+      description: "No. 97/1/1, Stanley Thilakarathna Mawatha, Nugegoda, Sri Lanka",
     },
     {
       icon: MapPin,
