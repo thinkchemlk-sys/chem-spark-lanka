@@ -1,5 +1,5 @@
-import { useEffect, useRef, useState } from "react";
-import { Pause, Play, CheckCircle2 } from "lucide-react";
+import { useEffect, useRef } from "react";
+import { CheckCircle2 } from "lucide-react";
 
 const categories = [
   {
@@ -104,7 +104,6 @@ const CategoryCarousel = () => {
   const offsetRef = useRef(0);
   const rafRef = useRef<number | null>(null);
   const hoveredRef = useRef(false);
-  const [paused, setPaused] = useState(false);
 
   const loopItems = [...categories, ...categories];
 
@@ -116,7 +115,7 @@ const CategoryCarousel = () => {
     const singleSetWidth = () => track.scrollWidth / 2;
 
     const tick = () => {
-      if (!paused && !hoveredRef.current && !isMobile()) {
+      if (!hoveredRef.current && !isMobile()) {
         offsetRef.current += 0.6;
         const w = singleSetWidth();
         if (offsetRef.current >= w) offsetRef.current -= w;
@@ -128,22 +127,11 @@ const CategoryCarousel = () => {
     return () => {
       if (rafRef.current) cancelAnimationFrame(rafRef.current);
     };
-  }, [paused]);
+  }, []);
 
   return (
-    <section className="relative w-full py-16 bg-primary text-primary-foreground overflow-hidden">
-      <div className="px-6 md:px-12 mb-6 flex items-start justify-between gap-4">
-        <h2 className="text-[28px] font-bold leading-tight text-white max-w-3xl">
-          Master every topic in the A/L Chemistry syllabus
-        </h2>
-        <button
-          onClick={() => setPaused((p) => !p)}
-          aria-label={paused ? "Play carousel" : "Pause carousel"}
-          className="shrink-0 h-12 w-12 rounded-full border-2 border-white/80 text-white flex items-center justify-center hover:bg-white hover:text-primary transition-colors"
-        >
-          {paused ? <Play className="h-5 w-5" /> : <Pause className="h-5 w-5" />}
-        </button>
-      </div>
+    <section className="relative w-full pt-24 md:pt-32 pb-16 bg-primary text-primary-foreground overflow-hidden">
+
 
       {/* Carousel: full-bleed on desktop, 2x5 grid on mobile */}
       <div className="hidden sm:block w-full overflow-hidden">
