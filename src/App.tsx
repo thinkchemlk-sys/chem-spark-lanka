@@ -19,7 +19,6 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
-          <Route path="/about" element={<About />} />
           <Route path="/auth" element={<Auth />} />
           <Route path="/mcqs" element={<MCQList />} />
           <Route path="/mcq/:id" element={<MCQDetail />} />

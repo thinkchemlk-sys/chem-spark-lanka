@@ -37,12 +37,6 @@ const Navigation = () => {
             >
               Home
             </Link>
-            <Link 
-              to="/about"
-              className="text-foreground hover:text-primary transition-colors font-medium"
-            >
-              About Us
-            </Link>
             {location.pathname === "/" && (
               <button 
                 onClick={() => scrollToSection("services")}
@@ -80,13 +74,6 @@ const Navigation = () => {
               className="block w-full text-left py-2 text-foreground hover:text-primary transition-colors font-medium"
             >
               Home
-            </Link>
-            <Link 
-              to="/about"
-              onClick={() => setIsOpen(false)}
-              className="block w-full text-left py-2 text-foreground hover:text-primary transition-colors font-medium"
-            >
-              About Us
             </Link>
             {location.pathname === "/" && (
               <button 
