@@ -46,7 +46,7 @@ const Hero = () => {
               onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
               className="bg-accent text-accent-foreground hover:bg-accent/90 font-bold text-lg px-8 py-6 shadow-xl hover:shadow-2xl transition-all group"
             >
-              Enrol.Now — Free TrialClass
+              Enrol Now — Free Trial Class
               <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
             </Button>
             <Button
