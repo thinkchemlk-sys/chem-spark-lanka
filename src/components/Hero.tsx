@@ -36,8 +36,8 @@ const Hero = () => {
           </h1>
 
           <p className="text-xl md:text-2xl text-white/90 mb-8 leading-relaxed whitespace-pre-line">
-            Expert-led chemistry tuition Advanced Level students. Clear explanations,
-            structured notes, and a track record that speaks for itself.{"\n\n"}
+            Expert-led chemistry tuition for Advanced Level students. Clear explanations,
+            structured notes, and a track record that speaks for itself.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4">
