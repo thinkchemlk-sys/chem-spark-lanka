@@ -43,8 +43,7 @@ const Services = () => {
         "Designed for Grade 12 and 13 students beginning their A/L journey. Covers all 14 units of the NIE Chemistry syllabus with regular unit tests, term assessments, and exam technique workshops.",
       bullets: [
         "Duration: 2 academic years (Grade 12 + 13)",
-        "• Mode: Physical + recorded access",
-        "• Mode: Physical + recorded access\n\n",
+        "Mode: Physical + recorded access",
       ],
     },
     {
