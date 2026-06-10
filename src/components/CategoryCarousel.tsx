@@ -1,5 +1,5 @@
-import { useEffect, useRef, useState } from "react";
-import { Pause, Play, CheckCircle2 } from "lucide-react";
+import { useEffect, useRef } from "react";
+import { CheckCircle2 } from "lucide-react";
 
 const categories = [
   {
