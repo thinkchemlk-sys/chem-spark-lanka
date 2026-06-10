@@ -11,7 +11,7 @@ const FutureAwaits = () => {
           Your Future Awaits
         </h2>
         <p className="text-lg md:text-xl text-primary/70 max-w-2xl mx-auto mb-10 leading-relaxed">
-          Join hundreds of successful students who transformed their Chemistry grades and secured their dream university placements.
+          No matter where you stand today, we’ll help you move forward with confidence, reach your full potential, and secure a place at the university you aspire to attend.
         </p>
         <a
           href="#contact"
