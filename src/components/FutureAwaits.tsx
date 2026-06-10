@@ -14,9 +14,7 @@ const FutureAwaits = () => {
           Join hundreds of successful students who transformed their Chemistry grades and secured their dream university placements.
         </p>
         <a
-          href="https://lms.thinkchem.lk/"
-          target="_blank"
-          rel="noopener noreferrer"
+          href="#contact"
           className="inline-flex items-center gap-3 px-10 py-5 rounded-full bg-gradient-to-r from-accent to-accent/80 text-primary font-bold text-lg shadow-xl hover:shadow-2xl hover:scale-105 transition-all"
         >
           Start Your Journey Today
