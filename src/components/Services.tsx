@@ -40,11 +40,11 @@ const Services = () => {
     {
       title: "Complete A/L Chemistry — 2-Year Programme",
       description:
-        "Designed for Grade 12 students beginning their A/L journey. Covers all 14 units of the NIE Chemistry syllabus with regular unit tests, term assessments, and exam technique workshops.",
+        "Designed for Grade 12 and 13 students beginning their A/L journey. Covers all 14 units of the NIE Chemistry syllabus with regular unit tests, term assessments, and exam technique workshops.",
       bullets: [
         "Duration: 2 academic years (Grade 12 + 13)",
-        "Medium: English",
-        "Mode: Online (live) + recorded access",
+        "• Mode: Physical + recorded access",
+        "• Mode: Physical + recorded access\n\n",
       ],
     },
     {
@@ -64,7 +64,7 @@ const Services = () => {
       icon: MapPin,
       tag: "In-Person Classes",
       title: "CIEC — Nugegoda",
-      description: "341/22 Kotte Road, Welikada, Rajagiriya, Sri Lanka",
+      description: "\n\nNo. 97/1/1, Stanley Thilakarathna Mawatha, Nugegoda, Sri Lanka",
     },
     {
       icon: MapPin,
@@ -90,7 +90,7 @@ const Services = () => {
         {/* Why ThinkChem */}
         <div className="max-w-3xl mx-auto text-center mb-16">
           <h2 className="font-display font-bold text-4xl md:text-5xl text-foreground mb-6">
-            Why 500+ A/L Students Choose ThinkChem Every Year
+            Why English Medium A/L Students Choose ThinkChem{" "}
           </h2>
           <p className="text-lg text-muted-foreground leading-relaxed">
             Syllabus-aligned chemistry tuition for English medium A/L students — online and in-person across Sri Lanka.
@@ -116,7 +116,7 @@ const Services = () => {
         {/* Courses */}
         <div id="courses" className="max-w-3xl mx-auto text-center mb-12">
           <h2 className="font-display font-bold text-4xl md:text-5xl text-foreground mb-6">
-            A/L Chemistry Courses for 2026 & 2027 Students
+            A/L Chemistry Courses for Students
           </h2>
           <p className="text-lg text-muted-foreground leading-relaxed">
             Whether you're just starting Grade 12 or in your final stretch before the A/L exam,
@@ -134,7 +134,7 @@ const Services = () => {
               <p className="text-muted-foreground leading-relaxed mb-6">{c.description}</p>
               <ul className="space-y-2 mb-6 text-foreground">
                 {c.bullets.map((b, j) => (
-                  <li key={j} className="text-sm">• {b}</li>
+                  <li key={j} className="text-sm whitespace-pre-line">• {b}</li>
                 ))}
               </ul>
               <Button
@@ -171,7 +171,7 @@ const Services = () => {
                 <h3 className="font-display font-bold text-xl text-foreground mb-2">
                   {loc.title}
                 </h3>
-                <p className="text-muted-foreground leading-relaxed">{loc.description}</p>
+                <p className="text-muted-foreground leading-relaxed whitespace-pre-line">{loc.description}</p>
               </Card>
             );
           })}
