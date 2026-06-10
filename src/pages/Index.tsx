@@ -26,6 +26,7 @@ const Index = () => {
       <Services />
       <Testimonials />
       <AboutInstructor />
+      <FutureAwaits />
       <FAQ />
       <Contact />
       <Footer />
