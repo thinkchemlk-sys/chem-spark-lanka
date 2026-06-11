@@ -31,15 +31,15 @@ const AboutInstructor = () => {
   }, []);
 
   const achievements = [
-    { icon: GraduationCap, label: "MBBS (UG)", desc: "University of Moratuwa" },
+    { icon: GraduationCap, label: "Teacher", desc: "A/L Chemistry Specialist" },
     { icon: Award, label: "6+ Years", desc: "A/L Teaching Experience" },
     { icon: Users, label: "98%", desc: "A or B Grade Students" },
   ];
 
   const highlights = [
-    "Bachelor of Medicine and Bachelor of Surgery (MBBS UG), Moratuwa",
+    "A/L Chemistry specialist",
     "6 years A/L Chemistry teaching experience",
-    "Former A/L exam marker at SASIP Institute",
+    "Former A/L exam marker",
   ];
 
   return (
@@ -106,7 +106,7 @@ const AboutInstructor = () => {
                 {/* Overlay with name */}
                 <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-primary/90 to-transparent p-4">
                   <h3 className="text-xl font-bold text-primary-foreground">Sithira Harischandra</h3>
-                  <p className="text-primary-foreground/80 text-sm">MBBS Undergraduate | Chemistry Educator</p>
+                  <p className="text-primary-foreground/80 text-sm">Chemistry Educator</p>
                 </div>
               </div>
             </div>
@@ -125,7 +125,7 @@ const AboutInstructor = () => {
                 Passionate About <span className="text-accent">Chemistry</span> Education
               </h3>
               <p className="text-muted-foreground leading-relaxed">
-                Sithira Harischandra is an MBBS undergraduate at the University of Moratuwa, Sri Lanka. With 6 years of experience teaching A/L Chemistry, he has guided students to achieve their target grades and secure places at Sri Lanka's top government universities.
+                Sithira Harischandra is a dedicated chemistry educator in Sri Lanka. With 6 years of experience teaching A/L Chemistry, he has guided students to achieve their target grades and secure places at Sri Lanka's top government universities.
               </p>
               <p className="text-muted-foreground leading-relaxed">
                 He brings the same clarity and student-centred approach to every class — breaking down complex organic chemistry mechanisms, thermodynamics, and electrochemistry into structured, memorable explanations that stick. 98% of his students have achieved an A or B grade in A/L Chemistry (English Medium).

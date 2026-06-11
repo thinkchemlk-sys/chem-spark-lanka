@@ -27,23 +27,22 @@ const About = () => {
             </h2>
             <p className="text-accent-foreground/90 font-semibold text-xl mb-6">
               <span className="text-primary">Sithira Harischandra</span>
-              <span className="text-muted-foreground font-normal text-base"> — MBBS (UG), 6+ Years A/L Chemistry</span>
+              <span className="text-muted-foreground font-normal text-base"> — 6+ Years A/L Chemistry</span>
             </p>
 
             <div className="space-y-5 text-base md:text-lg text-muted-foreground leading-relaxed">
               <p>
-                In just 6 years of teaching, ThinkChem has grown into one of the most trusted A/L Chemistry
-                programmes for English medium students across Sri Lanka — with hundreds of students every year
-                joining from Colombo, the suburbs, and online from every district of the island.
+                With years of teaching experience, ThinkChem is growing into a dedicated A/L Chemistry programme for English medium students in Sri Lanka. We are committed to providing clear explanations, structured learning, and individual attention to help students build confidence and achieve their academic goals.
+
               </p>
               <p>
                 Our results speak for themselves. <span className="text-foreground font-semibold">98% of our students achieve an A or B grade</span> at
-                the A/L exam, and many have ranked among the top chemistry performers in the country. This kind of
-                consistency in such a short time is almost unheard of in Sri Lankan A/L education.
+                the A/L exam, and many others have been destined to their dream university.
+
               </p>
               <p>
-                Led by <span className="text-foreground font-semibold">Sithira Harischandra (MBBS undergraduate &amp; SASIP exam marker)</span>,
-                ThinkChem combines syllabus-perfect teaching, structured notes, and real exam technique — so every
+                Led by <span className="text-foreground font-semibold">Sithira Harischandra</span>,
+                ThinkChem combines syllabus-perfect teaching, structured notes, and exam techniques; so every
                 student walks into the exam hall confident, prepared, and ready to excel.
               </p>
             </div>
