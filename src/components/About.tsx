@@ -33,12 +33,10 @@ const About = () => {
             <div className="space-y-5 text-base md:text-lg text-muted-foreground leading-relaxed">
               <p>
                 With years of teaching experience, ThinkChem is growing into a dedicated A/L Chemistry programme for English medium students in Sri Lanka. We are committed to providing clear explanations, structured learning, and individual attention to help students build confidence and achieve their academic goals.
-
               </p>
               <p>
                 Our results speak for themselves. <span className="text-foreground font-semibold">98% of our students achieve an A or B grade</span> at
                 the A/L exam, and many others have been destined to their dream university.
-
               </p>
               <p>
                 Led by <span className="text-foreground font-semibold">Sithira Harischandra</span>,
