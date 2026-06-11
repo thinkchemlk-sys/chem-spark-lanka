@@ -56,7 +56,7 @@ const WorkProcess = () => {
             Our Proven Work Process
           </h2>
           <p className="text-lg text-muted-foreground">
-            A systematic approach designed to transform chemistry students into A-Level champions
+            A systematic approach designed to transform chemistry students to get the best results in chemistry
           </p>
         </div>
 

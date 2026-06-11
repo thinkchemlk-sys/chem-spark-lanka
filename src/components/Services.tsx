@@ -14,7 +14,7 @@ const Services = () => {
       emoji: "🎓",
       title: "Expert-Led by Qualified Teachers",
       description:
-        "Our chemistry teachers hold BSc and MSc qualifications in chemistry from Sri Lanka's leading universities. Combined, our team has over 20 years of A/L teaching and exam-marking experience.",
+        "",
     },
     {
       emoji: "💻",

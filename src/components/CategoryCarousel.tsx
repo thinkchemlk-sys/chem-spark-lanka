@@ -93,7 +93,7 @@ const MoleculeOverlay = () => (
 
 const bullets = [
   "All 14 NIE syllabus units covered in full",
-  "Taught by Sithira Harischandra, MBBS undergraduate",
+  "Taught by Sithira Harischandra",
   "Structured notes and past paper practice every week",
   "Physical classes in Nugegoda and Pannipitiya",
   "Online classes accessible from anywhere",
