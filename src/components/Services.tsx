@@ -20,7 +20,7 @@ const Services = () => {
       emoji: "💻",
       title: "Online & In-Person Flexibility",
       description:
-        "Attend live online classes from anywhere in Sri Lanka, or join our in-person batches in Nugegoda and Piliyandala. Missed a class? Catch up with recorded sessions any time.",
+        "Attend live online classes from anywhere in Sri Lanka, or join our in-person batches in Nugegoda and Pannipitiya. Missed a class? Catch up with recorded sessions any time.",
     },
     {
       emoji: "📄",
