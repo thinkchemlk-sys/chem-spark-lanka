@@ -68,8 +68,8 @@ const Services = () => {
     {
       icon: MapPin,
       tag: "In-Person Classes",
-      title: "Bokundara, Piliyandala",
-      description: "Join our in-person batches in the Piliyandala area.",
+      title: "Pannipitiya",
+      description: "Join our in-person batches in the Pannipitiya area.",
     },
     {
       icon: Monitor,
@@ -152,7 +152,7 @@ const Services = () => {
             Where to Find Us
           </h2>
           <p className="text-lg text-muted-foreground leading-relaxed">
-            Join us in person at our Nugegoda or Piliyandala centres, or learn live online from anywhere in Sri Lanka.
+            Join us in person at our Nugegoda or Pannipitiya centres, or learn live online from anywhere in Sri Lanka.
           </p>
         </div>
 

@@ -93,10 +93,11 @@ const MoleculeOverlay = () => (
 
 const bullets = [
   "All 14 NIE syllabus units covered in full",
-  "Taught by Sithira Harischandra",
+  "Recap papers every week to recall prior week lessons",
   "Structured notes and past paper practice every week",
   "Physical classes in Nugegoda and Pannipitiya",
   "Online classes accessible from anywhere",
+  "Ease of access to class recordings through an organized learning management system (LMS)",
 ];
 
 const CategoryCarousel = () => {
