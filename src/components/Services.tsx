@@ -20,7 +20,7 @@ const Services = () => {
       emoji: "💻",
       title: "Online & In-Person Flexibility",
       description:
-        "Attend live online classes from anywhere in Sri Lanka, or join our in-person batches in Nugegoda and Piliyandala. Missed a class? Catch up with recorded sessions any time.",
+        "Attend live online classes from anywhere in Sri Lanka, or join our in-person batches in Nugegoda and Pannipitiya. Missed a class? Catch up with recorded sessions any time.",
     },
     {
       emoji: "📄",
@@ -68,8 +68,8 @@ const Services = () => {
     {
       icon: MapPin,
       tag: "In-Person Classes",
-      title: "Bokundara, Piliyandala",
-      description: "Join our in-person batches in the Piliyandala area.",
+      title: "Pannipitiya",
+      description: "Join our in-person batches in the Pannipitiya area.",
     },
     {
       icon: Monitor,
@@ -152,7 +152,7 @@ const Services = () => {
             Where to Find Us
           </h2>
           <p className="text-lg text-muted-foreground leading-relaxed">
-            Join us in person at our Nugegoda or Piliyandala centres, or learn live online from anywhere in Sri Lanka.
+            Join us in person at our Nugegoda or Pannipitiya centres, or learn live online from anywhere in Sri Lanka.
           </p>
         </div>
 
