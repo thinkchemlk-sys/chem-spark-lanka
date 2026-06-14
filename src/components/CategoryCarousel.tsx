@@ -5,62 +5,52 @@ const categories = [
   {
     label: "Physical Chemistry",
     color: "#22d3ee",
-    image:
-      "https://images.unsplash.com/photo-1567427017947-545c5f8d16ad?auto=format&fit=crop&w=600&q=70",
+    image: "/carousel-chemistry-lab.jpg",
   },
   {
     label: "Organic Chemistry",
     color: "#facc15",
-    image:
-      "https://images.unsplash.com/photo-1628863353691-0071c8c1874c?auto=format&fit=crop&w=600&q=70",
+    image: "/carousel-models.jpg",
   },
   {
     label: "Inorganic Chemistry",
     color: "#a78bfa",
-    image:
-      "https://images.unsplash.com/photo-1554475901-4538ddfbccc2?auto=format&fit=crop&w=600&q=70",
+    image: "/carousel-chalkboard.jpg",
   },
   {
     label: "Lab Practicals",
     color: "#34d399",
-    image:
-      "https://images.unsplash.com/photo-1532634922-8fe0b757fb13?auto=format&fit=crop&w=600&q=70",
+    image: "/carousel-chemistry-lab.jpg",
   },
   {
     label: "A/L Past Papers",
     color: "#fb7185",
-    image:
-      "https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?auto=format&fit=crop&w=600&q=70",
+    image: "/carousel-study.jpg",
   },
   {
     label: "Chemical Equilibrium",
     color: "#60a5fa",
-    image:
-      "https://images.unsplash.com/photo-1603126857599-f6e157fa2fe6?auto=format&fit=crop&w=600&q=70",
+    image: "/carousel-chalkboard.jpg",
   },
   {
     label: "Exam Technique",
     color: "#f97316",
-    image:
-      "https://images.unsplash.com/photo-1606326608606-aa0b62935f2b?auto=format&fit=crop&w=600&q=70",
+    image: "/carousel-study.jpg",
   },
   {
     label: "MCQ Practice",
     color: "#22d3ee",
-    image:
-      "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=600&q=70",
+    image: "/carousel-study.jpg",
   },
   {
     label: "Group Study",
     color: "#facc15",
-    image:
-      "https://images.unsplash.com/photo-1543269865-cbf427effbad?auto=format&fit=crop&w=600&q=70",
+    image: "/carousel-models.jpg",
   },
   {
     label: "University Pathway",
     color: "#f472b6",
-    image:
-      "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=600&q=70",
+    image: "/carousel-chalkboard.jpg",
   },
 ];
 
