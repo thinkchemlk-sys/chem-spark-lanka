@@ -83,35 +83,8 @@ const AboutInstructor = () => {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-          {/* Image section with creative frame */}
-          <div 
-            className={`relative transition-all duration-1000 delay-300 ${
-              isVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-20"
-            }`}
-          >
-            {/* Decorative elements */}
-            <div className="absolute -top-6 -left-6 w-24 h-24 border-4 border-accent rounded-tl-3xl animate-pulse" />
-            <div className="absolute -bottom-6 -right-6 w-24 h-24 border-4 border-primary rounded-br-3xl animate-pulse" style={{ animationDelay: "0.5s" }} />
-            
-            {/* Main image container */}
-            <div className="relative group">
-              <div className="absolute inset-0 bg-gradient-to-tr from-primary to-accent rounded-2xl transform rotate-3 group-hover:rotate-6 transition-transform duration-500" />
-              <div className="relative bg-background rounded-2xl overflow-hidden shadow-lg transform group-hover:-translate-y-2 transition-all duration-500 max-w-xs mx-auto">
-                <img
-                  src={instructorImage}
-                  alt="Sithira Harischandra - Chemistry Instructor"
-                  className="w-full h-auto object-cover aspect-[3/4]"
-                />
-                {/* Overlay with name */}
-                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-primary/90 to-transparent p-4">
-                  <h3 className="text-xl font-bold text-primary-foreground">Sithira Harischandra</h3>
-                  <p className="text-primary-foreground/80 text-sm">Chemistry Educator</p>
-                </div>
-              </div>
-            </div>
+        <div className="max-w-3xl mx-auto">
 
-          </div>
 
           {/* Content section */}
           <div 
