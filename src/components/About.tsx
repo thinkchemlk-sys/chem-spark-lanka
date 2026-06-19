@@ -1,24 +1,11 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
-import tutorImage from "@/assets/tutor.png";
 
 const About = () => {
   return (
     <section id="about" className="py-24">
       <div className="container mx-auto px-4">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center max-w-6xl mx-auto">
-          {/* Image */}
-          <div className="flex justify-center lg:justify-start">
-            <div className="relative">
-              <div className="absolute -inset-6 bg-accent/20 blur-3xl rounded-full"></div>
-              <img
-                src={tutorImage}
-                alt="Sithira Harischandra — ThinkChem A/L Chemistry Instructor"
-                className="relative w-full max-w-md h-auto object-contain drop-shadow-2xl animate-fade-in"
-              />
-            </div>
-          </div>
-
+        <div className="grid gap-12 lg:gap-16 items-center max-w-3xl mx-auto">
           {/* Content */}
           <div>
             <div className="w-16 h-1.5 bg-accent rounded-full mb-6"></div>
