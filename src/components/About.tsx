@@ -1,12 +1,11 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
-import tutorImage from "@/assets/tutor.png";
 
 const About = () => {
   return (
     <section id="about" className="py-24">
       <div className="container mx-auto px-4">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center max-w-6xl mx-auto">
+        <div className="grid gap-12 lg:gap-16 items-center max-w-3xl mx-auto">
           {/* Image */}
           <div className="flex justify-center lg:justify-start">
             <div className="relative">
