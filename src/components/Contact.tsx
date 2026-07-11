@@ -7,7 +7,7 @@ import { Calendar } from "@/components/ui/calendar";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
-import { Check, CalendarIcon, Clock } from "lucide-react";
+import { Check, CalendarIcon } from "lucide-react";
 import { useState } from "react";
 import { format } from "date-fns";
 import { cn } from "@/lib/utils";
@@ -21,6 +21,11 @@ const attendanceOptions = [
   "In person at Pannipitiya (Sinhala Medium)",
 ] as const;
 
+const batchOptions = [
+  "2027 Batch (Wednesdays, 5:00 PM to 9:00 PM)",
+  "2028 Batch (Saturdays, 4:30 PM to 7:30 PM)",
+] as const;
+
 const enrollmentSchema = z.object({
   firstName: z.string().trim().min(1, "First name is required").max(100),
   lastName: z.string().trim().min(1, "Last name is required").max(100),
@@ -28,16 +33,12 @@ const enrollmentSchema = z.object({
   phone: z.string().trim().min(10, "Phone number is required").max(20),
   consent: z.boolean().refine(val => val === true, "You must consent to continue"),
   callDate: z.date().optional(),
-  callTime: z.string().optional(),
+  batch: z.enum(batchOptions, { errorMap: () => ({ message: "Please select which A/L batch you are joining" }) }),
   medium: z.enum(["English", "Sinhala"], { errorMap: () => ({ message: "Please select a medium" }) }),
   attendanceMode: z.enum(attendanceOptions, { errorMap: () => ({ message: "Please select how you would like to attend classes" }) }),
   notes: z.string().trim().max(1000, "Notes must be less than 1000 characters").optional(),
 });
 
-const timeSlots = [
-  "5:00 PM", "5:30 PM", "6:00 PM", "6:30 PM", "7:00 PM", "7:30 PM",
-  "8:00 PM", "8:30 PM", "9:00 PM", "9:30 PM", "10:00 PM", "10:30 PM", "11:00 PM"
-];
 
 const Contact = () => {
   const { toast } = useToast();
@@ -50,7 +51,7 @@ const Contact = () => {
     consent: false,
     medium: "",
     attendanceMode: "",
-    callTime: "",
+    batch: "",
     notes: "",
   });
   const [callDate, setCallDate] = useState<Date>();
@@ -82,8 +83,8 @@ const Contact = () => {
           phone: validatedData.phone,
           medium: validatedData.medium,
           attendanceMode: validatedData.attendanceMode,
+          batch: validatedData.batch,
           callDate: callDate ? format(callDate, "PPP") : undefined,
-          callTime: validatedData.callTime,
           notes: validatedData.notes,
         },
       });
@@ -104,7 +105,7 @@ const Contact = () => {
         consent: false,
         medium: "",
         attendanceMode: "",
-        callTime: "",
+        batch: "",
         notes: "",
       });
       setCallDate(undefined);
@@ -298,20 +299,25 @@ const Contact = () => {
                     </Popover>
                   </div>
 
-                  <div className="space-y-2">
-                    <Label htmlFor="callTime" className="text-foreground">
-                      Preferred Time (Sri Lankan Time - Optional)
+                  <div className="space-y-3">
+                    <Label className="text-foreground">
+                      Which A/L batch are you joining? <span className="text-destructive">*</span>
                     </Label>
-                    <Select value={formData.callTime} onValueChange={(value) => setFormData({...formData, callTime: value})}>
-                      <SelectTrigger className="bg-background border-input">
-                        <SelectValue placeholder="Select time slot" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        {timeSlots.map((time) => (
-                          <SelectItem key={time} value={time}>{time}</SelectItem>
-                        ))}
-                      </SelectContent>
-                    </Select>
+                    <RadioGroup
+                      value={formData.batch}
+                      onValueChange={(value) => setFormData({...formData, batch: value})}
+                      className="space-y-3"
+                    >
+                      {batchOptions.map((option) => (
+                        <div key={option} className="flex items-start space-x-3 rounded-lg border border-input p-4 hover:bg-accent/5 transition-colors">
+                          <RadioGroupItem value={option} id={option} className="mt-1" />
+                          <Label htmlFor={option} className="text-foreground leading-relaxed cursor-pointer">
+                            {option}
+                          </Label>
+                        </div>
+                      ))}
+                    </RadioGroup>
+                    {errors.batch && <p className="text-sm text-destructive">{errors.batch}</p>}
                   </div>
                 </div>
 
