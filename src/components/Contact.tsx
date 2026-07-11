@@ -81,6 +81,7 @@ const Contact = () => {
           email: validatedData.email,
           phone: validatedData.phone,
           medium: validatedData.medium,
+          attendanceMode: validatedData.attendanceMode,
           callDate: callDate ? format(callDate, "PPP") : undefined,
           callTime: validatedData.callTime,
           notes: validatedData.notes,
@@ -243,6 +244,27 @@ const Contact = () => {
                     </SelectContent>
                   </Select>
                   {errors.medium && <p className="text-sm text-destructive">{errors.medium}</p>}
+                </div>
+
+                <div className="space-y-3">
+                  <Label className="text-foreground">
+                    How would you like to attend classes? <span className="text-destructive">*</span>
+                  </Label>
+                  <RadioGroup
+                    value={formData.attendanceMode}
+                    onValueChange={(value) => setFormData({...formData, attendanceMode: value})}
+                    className="space-y-3"
+                  >
+                    {attendanceOptions.map((option) => (
+                      <div key={option} className="flex items-start space-x-3 rounded-lg border border-input p-4 hover:bg-accent/5 transition-colors">
+                        <RadioGroupItem value={option} id={option} className="mt-1" />
+                        <Label htmlFor={option} className="text-foreground leading-relaxed cursor-pointer">
+                          {option}
+                        </Label>
+                      </div>
+                    ))}
+                  </RadioGroup>
+                  {errors.attendanceMode && <p className="text-sm text-destructive">{errors.attendanceMode}</p>}
                 </div>
 
                 <div className="grid md:grid-cols-2 gap-4">
