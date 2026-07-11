@@ -21,6 +21,11 @@ const attendanceOptions = [
   "In person at Pannipitiya (Sinhala Medium)",
 ] as const;
 
+const batchOptions = [
+  "2027 Batch (Wednesdays, 5:00 PM to 9:00 PM)",
+  "2028 Batch (Saturdays, 4:30 PM to 7:30 PM)",
+] as const;
+
 const enrollmentSchema = z.object({
   firstName: z.string().trim().min(1, "First name is required").max(100),
   lastName: z.string().trim().min(1, "Last name is required").max(100),
@@ -28,7 +33,7 @@ const enrollmentSchema = z.object({
   phone: z.string().trim().min(10, "Phone number is required").max(20),
   consent: z.boolean().refine(val => val === true, "You must consent to continue"),
   callDate: z.date().optional(),
-  callTime: z.string().optional(),
+  batch: z.enum(batchOptions, { errorMap: () => ({ message: "Please select which A/L batch you are joining" }) }),
   medium: z.enum(["English", "Sinhala"], { errorMap: () => ({ message: "Please select a medium" }) }),
   attendanceMode: z.enum(attendanceOptions, { errorMap: () => ({ message: "Please select how you would like to attend classes" }) }),
   notes: z.string().trim().max(1000, "Notes must be less than 1000 characters").optional(),
@@ -46,7 +51,7 @@ const Contact = () => {
     consent: false,
     medium: "",
     attendanceMode: "",
-    callTime: "",
+    batch: "",
     notes: "",
   });
   const [callDate, setCallDate] = useState<Date>();
