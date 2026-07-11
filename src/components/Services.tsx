@@ -74,7 +74,7 @@ const Services = () => {
     {
       icon: Monitor,
       tag: "Online Classes",
-      title: "Live via Zoom / Google Meet",
+      title: "Live via Youtube",
       description:
         "Join from anywhere in Sri Lanka. All you need is a phone or laptop and a stable internet connection.",
     },

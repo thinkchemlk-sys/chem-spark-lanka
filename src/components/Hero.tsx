@@ -36,8 +36,7 @@ const Hero = () => {
           </h1>
 
           <p className="text-xl md:text-2xl text-white/90 mb-8 leading-relaxed whitespace-pre-line">
-            Expert-led chemistry tuition for Advanced Level students. Clear explanations,
-            structured notes, and a track record that speaks for itself.
+            A/L Chemistry does not have to be the subject that breaks you. At ThinkChem we teach English medium students in Sri Lanka how to think through Chemistry, not just memorize it, and walk into their exam confident and prepared.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4">
