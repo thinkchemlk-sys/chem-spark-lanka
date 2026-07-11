@@ -102,6 +102,7 @@ const Contact = () => {
         phone: "+94 ",
         consent: false,
         medium: "",
+        attendanceMode: "",
         callTime: "",
         notes: "",
       });
