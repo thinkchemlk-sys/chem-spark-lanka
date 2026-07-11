@@ -6,6 +6,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Calendar } from "@/components/ui/calendar";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Check, CalendarIcon, Clock } from "lucide-react";
 import { useState } from "react";
 import { format } from "date-fns";
@@ -13,6 +14,12 @@ import { cn } from "@/lib/utils";
 import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
 import { z } from "zod";
+
+const attendanceOptions = [
+  "In person at CIEC Institute, Nugegoda (English Medium)",
+  "Online via YouTube- Live Streaming",
+  "In person at Pannipitiya (Sinhala Medium)",
+] as const;
 
 const enrollmentSchema = z.object({
   firstName: z.string().trim().min(1, "First name is required").max(100),
@@ -23,6 +30,7 @@ const enrollmentSchema = z.object({
   callDate: z.date().optional(),
   callTime: z.string().optional(),
   medium: z.enum(["English", "Sinhala"], { errorMap: () => ({ message: "Please select a medium" }) }),
+  attendanceMode: z.enum(attendanceOptions, { errorMap: () => ({ message: "Please select how you would like to attend classes" }) }),
   notes: z.string().trim().max(1000, "Notes must be less than 1000 characters").optional(),
 });
 

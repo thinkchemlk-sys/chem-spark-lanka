@@ -14,6 +14,7 @@ interface EnrollmentRequest {
   email: string;
   phone: string;
   medium: string;
+  attendanceMode: string;
   callDate?: string;
   callTime?: string;
   notes?: string;
