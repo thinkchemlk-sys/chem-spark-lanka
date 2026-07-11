@@ -14,6 +14,7 @@ interface EnrollmentRequest {
   email: string;
   phone: string;
   medium: string;
+  attendanceMode: string;
   callDate?: string;
   callTime?: string;
   notes?: string;
@@ -25,7 +26,7 @@ const handler = async (req: Request): Promise<Response> => {
   }
 
   try {
-    const { firstName, lastName, email, phone, medium, callDate, callTime, notes }: EnrollmentRequest = await req.json();
+    const { firstName, lastName, email, phone, medium, attendanceMode, callDate, callTime, notes }: EnrollmentRequest = await req.json();
 
     console.log("Processing enrollment for:", email);
 
@@ -42,6 +43,7 @@ const handler = async (req: Request): Promise<Response> => {
         <p><strong>Email:</strong> ${email}</p>
         <p><strong>Phone:</strong> ${phone}</p>
         <p><strong>Medium:</strong> ${medium}</p>
+        <p><strong>How would you like to attend classes?</strong> ${attendanceMode}</p>
         ${callDate ? `<p><strong>Preferred Call Date:</strong> ${callDate}</p>` : ''}
         ${callTime ? `<p><strong>Preferred Call Time:</strong> ${callTime} (Sri Lankan Time)</p>` : ''}
         ${notes ? `<h3>Student Notes:</h3><p>${notes}</p>` : ''}

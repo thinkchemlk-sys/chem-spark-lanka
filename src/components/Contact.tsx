@@ -6,6 +6,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Calendar } from "@/components/ui/calendar";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Check, CalendarIcon, Clock } from "lucide-react";
 import { useState } from "react";
 import { format } from "date-fns";
@@ -13,6 +14,12 @@ import { cn } from "@/lib/utils";
 import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
 import { z } from "zod";
+
+const attendanceOptions = [
+  "In person at CIEC Institute, Nugegoda (English Medium)",
+  "Online via YouTube- Live Streaming",
+  "In person at Pannipitiya (Sinhala Medium)",
+] as const;
 
 const enrollmentSchema = z.object({
   firstName: z.string().trim().min(1, "First name is required").max(100),
@@ -23,6 +30,7 @@ const enrollmentSchema = z.object({
   callDate: z.date().optional(),
   callTime: z.string().optional(),
   medium: z.enum(["English", "Sinhala"], { errorMap: () => ({ message: "Please select a medium" }) }),
+  attendanceMode: z.enum(attendanceOptions, { errorMap: () => ({ message: "Please select how you would like to attend classes" }) }),
   notes: z.string().trim().max(1000, "Notes must be less than 1000 characters").optional(),
 });
 
@@ -41,6 +49,7 @@ const Contact = () => {
     phone: "+94 ",
     consent: false,
     medium: "",
+    attendanceMode: "",
     callTime: "",
     notes: "",
   });
@@ -72,6 +81,7 @@ const Contact = () => {
           email: validatedData.email,
           phone: validatedData.phone,
           medium: validatedData.medium,
+          attendanceMode: validatedData.attendanceMode,
           callDate: callDate ? format(callDate, "PPP") : undefined,
           callTime: validatedData.callTime,
           notes: validatedData.notes,
@@ -93,6 +103,7 @@ const Contact = () => {
         phone: "+94 ",
         consent: false,
         medium: "",
+        attendanceMode: "",
         callTime: "",
         notes: "",
       });
@@ -233,6 +244,27 @@ const Contact = () => {
                     </SelectContent>
                   </Select>
                   {errors.medium && <p className="text-sm text-destructive">{errors.medium}</p>}
+                </div>
+
+                <div className="space-y-3">
+                  <Label className="text-foreground">
+                    How would you like to attend classes? <span className="text-destructive">*</span>
+                  </Label>
+                  <RadioGroup
+                    value={formData.attendanceMode}
+                    onValueChange={(value) => setFormData({...formData, attendanceMode: value})}
+                    className="space-y-3"
+                  >
+                    {attendanceOptions.map((option) => (
+                      <div key={option} className="flex items-start space-x-3 rounded-lg border border-input p-4 hover:bg-accent/5 transition-colors">
+                        <RadioGroupItem value={option} id={option} className="mt-1" />
+                        <Label htmlFor={option} className="text-foreground leading-relaxed cursor-pointer">
+                          {option}
+                        </Label>
+                      </div>
+                    ))}
+                  </RadioGroup>
+                  {errors.attendanceMode && <p className="text-sm text-destructive">{errors.attendanceMode}</p>}
                 </div>
 
                 <div className="grid md:grid-cols-2 gap-4">
