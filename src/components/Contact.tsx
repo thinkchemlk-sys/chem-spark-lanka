@@ -83,8 +83,8 @@ const Contact = () => {
           phone: validatedData.phone,
           medium: validatedData.medium,
           attendanceMode: validatedData.attendanceMode,
+          batch: validatedData.batch,
           callDate: callDate ? format(callDate, "PPP") : undefined,
-          callTime: validatedData.callTime,
           notes: validatedData.notes,
         },
       });
@@ -105,7 +105,7 @@ const Contact = () => {
         consent: false,
         medium: "",
         attendanceMode: "",
-        callTime: "",
+        batch: "",
         notes: "",
       });
       setCallDate(undefined);
@@ -299,20 +299,25 @@ const Contact = () => {
                     </Popover>
                   </div>
 
-                  <div className="space-y-2">
-                    <Label htmlFor="callTime" className="text-foreground">
-                      Preferred Time (Sri Lankan Time - Optional)
+                  <div className="space-y-3">
+                    <Label className="text-foreground">
+                      Which A/L batch are you joining? <span className="text-destructive">*</span>
                     </Label>
-                    <Select value={formData.callTime} onValueChange={(value) => setFormData({...formData, callTime: value})}>
-                      <SelectTrigger className="bg-background border-input">
-                        <SelectValue placeholder="Select time slot" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        {timeSlots.map((time) => (
-                          <SelectItem key={time} value={time}>{time}</SelectItem>
-                        ))}
-                      </SelectContent>
-                    </Select>
+                    <RadioGroup
+                      value={formData.batch}
+                      onValueChange={(value) => setFormData({...formData, batch: value})}
+                      className="space-y-3"
+                    >
+                      {batchOptions.map((option) => (
+                        <div key={option} className="flex items-start space-x-3 rounded-lg border border-input p-4 hover:bg-accent/5 transition-colors">
+                          <RadioGroupItem value={option} id={option} className="mt-1" />
+                          <Label htmlFor={option} className="text-foreground leading-relaxed cursor-pointer">
+                            {option}
+                          </Label>
+                        </div>
+                      ))}
+                    </RadioGroup>
+                    {errors.batch && <p className="text-sm text-destructive">{errors.batch}</p>}
                   </div>
                 </div>
 
