@@ -1,14 +1,26 @@
 User-agent: Googlebot
 Allow: /
+Disallow: /auth
+Disallow: /mcq/
 
 User-agent: Bingbot
 Allow: /
+Disallow: /auth
+Disallow: /mcq/
 
 User-agent: Twitterbot
 Allow: /
+Disallow: /auth
+Disallow: /mcq/
 
 User-agent: facebookexternalhit
 Allow: /
+Disallow: /auth
+Disallow: /mcq/
 
 User-agent: *
 Allow: /
+Disallow: /auth
+Disallow: /mcq/
+
+Sitemap: https://thinkchem.lk/sitemap.xml
