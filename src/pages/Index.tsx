@@ -18,7 +18,12 @@ import MascotWidget from "@/components/MascotWidget";
 const Index = () => {
   return (
     <div className="min-h-screen">
+      <Helmet>
+        <link rel="canonical" href="https://thinkchem.lk/" />
+        <meta property="og:url" content="https://thinkchem.lk/" />
+      </Helmet>
       <Navigation />
+
       <Hero />
       <CategoryCarousel />
       <ExamCountdown />
