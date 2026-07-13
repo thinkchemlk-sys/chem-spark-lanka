@@ -6,6 +6,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge";
 import { useToast } from "@/hooks/use-toast";
 import Navigation from "@/components/Navigation";
+import { Helmet } from "react-helmet-async";
 import { BookOpen, LogOut } from "lucide-react";
 
 interface MCQQuestion {
@@ -75,7 +76,13 @@ const MCQList = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-background via-primary/5 to-accent/10">
+      <Helmet>
+        <link rel="canonical" href="https://thinkchem.lk/mcqs" />
+        <meta property="og:url" content="https://thinkchem.lk/mcqs" />
+      </Helmet>
       <Navigation />
+      
+
       
       <div className="container mx-auto px-4 py-8 pt-24">
         <div className="flex justify-between items-center mb-8">
