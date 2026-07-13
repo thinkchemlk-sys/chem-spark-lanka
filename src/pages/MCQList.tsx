@@ -6,6 +6,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge";
 import { useToast } from "@/hooks/use-toast";
 import Navigation from "@/components/Navigation";
+import { Helmet } from "react-helmet-async";
 import { BookOpen, LogOut } from "lucide-react";
 
 interface MCQQuestion {
