@@ -1,38 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://chem-spark-lanka.lovable.app/</loc>
+    <loc>https://thinkchem.lk/</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://chem-spark-lanka.lovable.app/auth</loc>
+    <loc>https://thinkchem.lk/mcqs</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://chem-spark-lanka.lovable.app/mcqs</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://chem-spark-lanka.lovable.app/mcq/a4ee9e7b-0655-4a70-9f96-e5f0853872db</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://chem-spark-lanka.lovable.app/mcq/40dc5d3f-f0f2-4bef-8bf3-b5821be910cc</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://chem-spark-lanka.lovable.app/mcq/a33ff4fe-f1f5-4b9e-ae3b-1e3206b37f3d</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://chem-spark-lanka.lovable.app/mcq/23d35314-2e57-483c-bc48-edf40b76caad</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
 </urlset>
