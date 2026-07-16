@@ -5,7 +5,22 @@ const About = () => {
   return (
     <section id="about" className="py-24">
       <div className="container mx-auto px-4">
-        <div className="grid gap-12 lg:gap-16 items-center max-w-3xl mx-auto">
+        <div className="grid gap-12 lg:gap-16 items-center lg:grid-cols-2 max-w-6xl mx-auto">
+          {/* Video */}
+          <div>
+            <div className="relative w-full aspect-video rounded-2xl overflow-hidden shadow-lg bg-muted">
+              <iframe
+                className="absolute inset-0 w-full h-full"
+                src="https://www.youtube.com/embed/CFW7PYNdwXw?si=lPN7Jjz_bkSfQSaw"
+                title="YouTube video player"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerPolicy="strict-origin-when-cross-origin"
+                allowFullScreen
+              ></iframe>
+            </div>
+          </div>
+
           {/* Content */}
           <div>
             <div className="w-16 h-1.5 bg-accent rounded-full mb-6"></div>
