@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { GraduationCap, Award, Users, Beaker, BookOpen } from "lucide-react";
+import instructorImg from "@/assets/instructor-sithira.png";
+
 
 
 const AboutInstructor = () => {
@@ -83,16 +85,43 @@ const AboutInstructor = () => {
           </p>
         </div>
 
-        <div className="max-w-3xl mx-auto">
-
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center max-w-6xl mx-auto">
+          {/* Instructor image */}
+          <div
+            className={`relative transition-all duration-1000 ${
+              isVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-20"
+            }`}
+          >
+            <div className="relative rounded-3xl overflow-hidden shadow-2xl bg-gradient-to-br from-primary/20 via-accent/10 to-primary/30">
+              {/* Decorative gradient blobs */}
+              <div className="absolute -top-16 -left-16 w-64 h-64 bg-accent/30 rounded-full blur-3xl" />
+              <div className="absolute -bottom-16 -right-16 w-72 h-72 bg-primary/40 rounded-full blur-3xl" />
+              <div className="relative aspect-[3/4] flex items-end justify-center">
+                <img
+                  src={instructorImg}
+                  alt="Sithira Harischandra - A/L Chemistry Instructor"
+                  className="relative z-10 max-h-full w-auto object-contain drop-shadow-2xl"
+                />
+              </div>
+            </div>
+            {/* Floating badge */}
+            <div className="absolute -bottom-6 -right-4 lg:right-8 bg-accent text-accent-foreground px-6 py-3 rounded-2xl shadow-xl font-bold flex items-center gap-2 z-20">
+              <Award className="w-5 h-5" />
+              <div className="text-sm leading-tight">
+                <div>6+ Years</div>
+                <div className="text-xs font-normal opacity-90">Teaching Experience</div>
+              </div>
+            </div>
+          </div>
 
           {/* Content section */}
-          <div 
+          <div
             className={`space-y-8 transition-all duration-1000 delay-500 ${
               isVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-20"
             }`}
           >
             {/* Introduction text */}
+
             <div className="space-y-4">
               <h3 className="text-2xl lg:text-3xl font-bold text-foreground">
                 Passionate About <span className="text-accent">Chemistry</span> Education
