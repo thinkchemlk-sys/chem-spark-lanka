@@ -114,8 +114,14 @@ const AboutInstructor = () => {
             </div>
           </div>
 
-
+          {/* Content section */}
+          <div
+            className={`space-y-8 transition-all duration-1000 delay-500 ${
+              isVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-20"
+            }`}
+          >
             {/* Introduction text */}
+
             <div className="space-y-4">
               <h3 className="text-2xl lg:text-3xl font-bold text-foreground">
                 Passionate About <span className="text-accent">Chemistry</span> Education
