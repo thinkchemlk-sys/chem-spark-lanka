@@ -53,7 +53,7 @@ const About = () => {
                 className="bg-accent text-accent-foreground hover:bg-accent/90 rounded-full px-8 shadow-lg group"
                 asChild
               >
-                <a href="https://lms.thinkchem.lk/" target="_blank" rel="noopener noreferrer">
+                <a href="#contact">
                   Join Now
                   <ArrowRight className="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1" />
                 </a>
