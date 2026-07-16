@@ -92,18 +92,19 @@ const AboutInstructor = () => {
               isVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-20"
             }`}
           >
-            <div className="relative rounded-3xl overflow-hidden shadow-2xl bg-gradient-to-br from-primary/20 via-accent/10 to-primary/30">
-              {/* Decorative gradient blobs */}
-              <div className="absolute -top-16 -left-16 w-64 h-64 bg-accent/30 rounded-full blur-3xl" />
-              <div className="absolute -bottom-16 -right-16 w-72 h-72 bg-primary/40 rounded-full blur-3xl" />
+            <div className="relative rounded-3xl overflow-hidden shadow-2xl bg-gradient-to-b from-[#e6ebf7] via-[#f2f5fb] to-white">
+              {/* Decorative soft glows */}
+              <div className="absolute -top-20 -left-16 w-72 h-72 bg-primary/10 rounded-full blur-3xl" />
+              <div className="absolute -bottom-20 -right-16 w-80 h-80 bg-primary/15 rounded-full blur-3xl" />
               <div className="relative aspect-[3/4] flex items-end justify-center">
                 <img
                   src={instructorImg}
                   alt="Sithira Harischandra - A/L Chemistry Instructor"
-                  className="relative z-10 max-h-full w-auto object-contain drop-shadow-2xl"
+                  className="relative z-10 max-h-[105%] w-auto object-contain drop-shadow-2xl"
                 />
               </div>
             </div>
+
             {/* Floating badge */}
             <div className="absolute -bottom-6 -right-4 lg:right-8 bg-accent text-accent-foreground px-6 py-3 rounded-2xl shadow-xl font-bold flex items-center gap-2 z-20">
               <Award className="w-5 h-5" />
