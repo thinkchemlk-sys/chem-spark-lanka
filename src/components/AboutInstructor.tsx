@@ -1,8 +1,6 @@
 import { useState, useEffect } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { GraduationCap, Award, Users, Beaker, BookOpen } from "lucide-react";
-import instructorImage from "@/assets/instructor-sithira.png";
-import mascotImage from "@/assets/mascot-clean.png";
 
 
 
@@ -87,31 +85,7 @@ const AboutInstructor = () => {
           </p>
         </div>
 
-        <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          {/* Instructor image card */}
-          <div
-            className={`transition-all duration-1000 flex justify-center lg:justify-start ${
-              isVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-10"
-            }`}
-          >
-            <div className="relative z-10 w-full max-w-sm">
-              <div className="relative rounded-2xl border border-border/60 bg-gradient-to-b from-[#e6ebf7] via-[#f2f5fb] to-white shadow-xl overflow-hidden aspect-[4/5]">
-                <img
-                  src={instructorImage}
-                  alt="Sithira Harischandra, A/L Chemistry teacher"
-                  className="absolute inset-0 w-full h-full object-contain p-4"
-                />
-              </div>
-              {/* Floating mascot badge */}
-              <img
-                src={mascotImage}
-                alt=""
-                aria-hidden="true"
-                className="absolute -bottom-6 -right-6 w-24 h-24 object-contain drop-shadow-2xl animate-bounce pointer-events-none select-none"
-              />
-            </div>
-          </div>
-
+        <div className="max-w-3xl mx-auto">
           {/* Content section */}
           <div
             className={`space-y-8 transition-all duration-1000 delay-300 ${
