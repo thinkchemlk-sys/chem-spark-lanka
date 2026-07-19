@@ -89,18 +89,15 @@ const AboutInstructor = () => {
         <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
           {/* Instructor image */}
           <div
-            className={`relative transition-all duration-1000 ${
+            className={`transition-all duration-1000 ${
               isVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-10"
             }`}
           >
-            <div className="relative rounded-3xl overflow-hidden aspect-[4/5] bg-gradient-to-br from-accent/20 via-background to-primary/15 shadow-xl">
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,hsl(var(--accent)/0.15),transparent_60%)]" />
-              <img
-                src={instructorImage}
-                alt="Sithira Harischandra, A/L Chemistry teacher"
-                className="absolute inset-0 w-full h-full object-contain object-bottom"
-              />
-            </div>
+            <img
+              src={instructorImage}
+              alt="Sithira Harischandra, A/L Chemistry teacher"
+              className="w-full max-w-md mx-auto lg:mx-0 h-auto object-contain"
+            />
           </div>
 
           {/* Content section */}
