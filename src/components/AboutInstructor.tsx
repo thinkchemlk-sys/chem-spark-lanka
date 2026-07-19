@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { GraduationCap, Award, Users, Beaker, BookOpen } from "lucide-react";
+import instructorImage from "@/assets/instructor-sithira.png";
+
 
 
 
@@ -84,13 +86,30 @@ const AboutInstructor = () => {
           </p>
         </div>
 
-        <div className="max-w-3xl mx-auto">
+        <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
+          {/* Instructor image */}
+          <div
+            className={`relative transition-all duration-1000 ${
+              isVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-10"
+            }`}
+          >
+            <div className="relative rounded-3xl overflow-hidden aspect-[4/5] bg-gradient-to-br from-accent/20 via-background to-primary/15 shadow-xl">
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,hsl(var(--accent)/0.15),transparent_60%)]" />
+              <img
+                src={instructorImage}
+                alt="Sithira Harischandra, A/L Chemistry teacher"
+                className="absolute inset-0 w-full h-full object-contain object-bottom"
+              />
+            </div>
+          </div>
+
           {/* Content section */}
           <div
-            className={`space-y-8 transition-all duration-1000 delay-500 ${
+            className={`space-y-8 transition-all duration-1000 delay-300 ${
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
             }`}
           >
+
             {/* Introduction text */}
 
             <div className="space-y-4">
