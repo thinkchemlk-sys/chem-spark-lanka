@@ -86,17 +86,17 @@ const AboutInstructor = () => {
           </p>
         </div>
 
-        <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
+        <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Instructor image */}
           <div
-            className={`transition-all duration-1000 ${
+            className={`transition-all duration-1000 lg:pr-4 ${
               isVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-10"
             }`}
           >
             <img
               src={instructorImage}
               alt="Sithira Harischandra, A/L Chemistry teacher"
-              className="w-full max-w-md mx-auto lg:mx-0 h-auto object-contain"
+              className="w-full max-w-sm mx-auto lg:mx-0 h-auto object-contain"
             />
           </div>
 
