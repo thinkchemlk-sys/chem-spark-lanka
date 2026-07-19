@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { GraduationCap, Award, Users, Beaker, BookOpen } from "lucide-react";
+import instructorImage from "@/assets/instructor-sithira.png";
+
 
 
 
